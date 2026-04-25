@@ -1,0 +1,60 @@
+=== Build Report — Unconventional-Ideas Branch ===
+Updated : 2026-04-25
+
+Branch  : Unconventional-Ideas
+Remote  : https://github.com/JDKrasnick/Point72Hackathon.git
+Commits : 19 (Apr 24 20:29 EDT → Apr 25 14:03 EDT)
+
+──────────────────────────────────────────────────────────────────────────────
+SESSION BREAKDOWN
+──────────────────────────────────────────────────────────────────────────────
+
+  #   Date/Time (EDT)               Duration    Tokens*   Description
+  ─   ──────────────────────────   ──────────  ────────   ───────────────────────────────────────────
+  1   Apr 24  8:29 PM – 2:57 AM     6h 28m      ~55,370   Base engine: PST eval, alpha-beta + IDS,
+                                                           quiescence, transposition table, UCI loop,
+                                                           tests (engines/base/ + tests/base/)
+  2   Apr 25 11:33 AM – 12:59 PM    1h 26m      ~18,293   8 variant engines + 52 tests passing
+                                                           (aggro_push, bishops_only, first_rank_lock,
+                                                           fortress, king_walk, mirror_queen,
+                                                           no_pawn_push, random_blunder)
+  3   Apr 25 12:59 PM –  1:06 PM       7m        ~4,055   tools/arbiter.py (UCI match runner)
+                                                           tools/tournament.py (round-robin)
+  4   Apr 25  1:06 PM –  2:03 PM      57m        ~8,553   tools/stats.py, standalone engine.py,
+                                                           results/report.txt, build logs
+                                                           (includes 23.9 min tournament run)
+
+──────────────────────────────────────────────────────────────────────────────
+TOTALS
+──────────────────────────────────────────────────────────────────────────────
+
+  Active session time   :   8h 58m   (32,280 s)
+  Tournament runtime    :      24m   ( 1,432 s, included in session 4)
+  Total wall-clock time :   8h 58m
+
+  Output tokens*        :  ~86,271
+  Est. total tokens**   : ~258,813
+
+  Lines of code (Python):    4,361
+  Source files written  :       37
+
+──────────────────────────────────────────────────────────────────────────────
+DELIVERABLES
+──────────────────────────────────────────────────────────────────────────────
+
+  engines/base/            Alpha-beta engine, PST eval, TT, UCI loop
+  engines/variants/ (×8)   Behavioral variants, each with one rule change
+  tests/                   52 passing tests across base + all variants
+  tools/arbiter.py         Runs any two UCI engines head-to-head
+  tools/tournament.py      Full round-robin across all 9 engines
+  tools/stats.py           Orchestrates tournament → selects best → writes all reports
+  engine.py                Final standalone UCI engine (tournament winner: base)
+  results/report.txt       Full leaderboard + vs-base analysis + reasoning
+
+──────────────────────────────────────────────────────────────────────────────
+NOTES
+──────────────────────────────────────────────────────────────────────────────
+
+  * Token estimate = output chars generated / 4  (rough approximation)
+  ** Estimated total (input + output) = output tokens × 3
+     Actual API token counts not available from CLI context.

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(python3 -c \"import chess; print\\(chess.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python3 -c \"import chess; print\\('ok', chess.__version__\\)\")",
+      "Bash(python3 -m pip install --upgrade python-chess)",
+      "Bash(python3 -c \"import chess; print\\('imports ok'\\)\")",
+      "Bash(python3 -m pytest --collect-only)",
+      "Bash(python3 -m pytest --version)",
+      "Bash(pip3 show *)",
+      "Bash(python3 -m pytest tests/base/test_evaluate.py -v)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(mkdir -p /Users/kimet/Documents/GitHub/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Point72Hackathon/engines/variants/__TRACKED_VAR__)",
+      "Bash(touch /Users/kimet/Documents/GitHub/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Point72Hackathon/engines/variants/__TRACKED_VAR__/__init__.py)",
+      "Bash(mkdir -p /Users/kimet/Documents/GitHub/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Point72Hackathon/tests/variants/__TRACKED_VAR__)",
+      "Bash(touch /Users/kimet/Documents/GitHub/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Point72Hackathon/tests/variants/__TRACKED_VAR__/__init__.py)",
+      "Bash(touch /Users/kimet/Documents/GitHub/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Probabilistic-Poker-Engine-PPE-/Point72Hackathon/engines/variants/__init__.py)",
+      "Bash(pytest *)",
+      "Bash(xargs cat *)"
+    ]
+  }
+}
