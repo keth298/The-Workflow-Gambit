@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Autoresearch: iteratively improve the engine via LLM-proposed evaluation changes
+Autoimprove: iteratively improve the engine via LLM-proposed evaluation changes
 validated by self-play matches (challenger vs champion). Keeps improvements, reverts regressions.
 
 Usage:
-    python3 autoresearch.py [--iterations N] [--games N] [--threshold F]
-    python3 autoresearch.py --report [--validate N]
+    python3 autoimprove.py [--iterations N] [--games N] [--threshold F]
+    python3 autoimprove.py --report [--validate N]
 """
 from __future__ import annotations
 
@@ -23,14 +23,14 @@ import chess
 import chess.engine
 from dotenv import load_dotenv
 
-AUTORESEARCH_DIR = Path(__file__).parent.resolve()
-ENGINE_DIR = AUTORESEARCH_DIR.parent / "PhasedEngine"
-load_dotenv(AUTORESEARCH_DIR / ".env")
-CHAMPION_DIR = AUTORESEARCH_DIR / "champion"
-BASELINE_DIR = AUTORESEARCH_DIR / "baseline"
-LOG_FILE = AUTORESEARCH_DIR / "autoresearch_log.json"
+AUTOIMPROVE_DIR = Path(__file__).parent.resolve()
+ENGINE_DIR = AUTOIMPROVE_DIR.parent / "PhasedEngine"
+load_dotenv(AUTOIMPROVE_DIR / ".env")
+CHAMPION_DIR = AUTOIMPROVE_DIR / "champion"
+BASELINE_DIR = AUTOIMPROVE_DIR / "baseline"
+LOG_FILE = AUTOIMPROVE_DIR / "autoimprove_log.json"
 EVAL_FILE = ENGINE_DIR / "evaluation.py"
-GRAPH_FILE = AUTORESEARCH_DIR / "autoresearch_progress.png"
+GRAPH_FILE = AUTOIMPROVE_DIR / "autoimprove_progress.png"
 
 SNAPSHOT_FILES = [
     "engine.py",
@@ -347,7 +347,7 @@ def plot_progress(log: list[dict], champion_vs_baseline: Optional[tuple[float, i
         cumulative.append(total)
 
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 7), sharex=True)
-    fig.suptitle("Autoresearch Progress", fontsize=14, fontweight="bold")
+    fig.suptitle("Autoimprove Progress", fontsize=14, fontweight="bold")
 
     colors = ["#2ecc71" if a else "#e74c3c" for a in accepted]
     ax1.bar(iterations, scores, color=colors, alpha=0.85, zorder=3)
@@ -395,7 +395,7 @@ def report(validate_games: int = 0) -> None:
     total = len(log)
 
     print(f"\n{'='*60}")
-    print(f"Autoresearch report  —  {total} iterations, {len(accepted)} accepted")
+    print(f"Autoimprove report  —  {total} iterations, {len(accepted)} accepted")
     print(f"{'='*60}")
     print(f"{'#':>4}  {'Score':>6}  {'Result':>8}  Rationale")
     print(f"{'─'*60}")
@@ -518,7 +518,7 @@ def run(n_iterations: int, n_games: int, threshold: float) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Autoresearch: LLM-driven iterative engine improvement via self-play"
+        description="Autoimprove: LLM-driven iterative engine improvement via self-play"
     )
     parser.add_argument("--iterations", "-n", type=int, default=DEFAULT_ITERATIONS,
                         help=f"Number of iterations (default: {DEFAULT_ITERATIONS})")

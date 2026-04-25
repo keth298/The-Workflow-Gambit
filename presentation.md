@@ -1,4 +1,4 @@
-# Which AI Development Workflow Actually Wins?
+# The Workflow Gambit: A Controlled Evaluation of AI-Assisted Development Strategies for Chess Engine Programming
 **Cubist Hackathon 2026**
 
 ---
@@ -23,7 +23,7 @@ So we ran an experiment.
 
 ## The Experiment
 
-- 10 engines, 10 workflows, same time budget
+- 9 engines, 9 workflows, same time budget
 - Shared base `CLAUDE.md` for standardization
 - Single move interface — every engine plugs into the same evaluation system. 
 - Results logged automatically, no manual entry
@@ -37,7 +37,7 @@ Four philosophies, ten engines.
 | Cluster | Engines |
 |---|---|
 | Basic Prompting | One Shot, Standard Prompting, Phase Implementation |
-| Agentic | Adversarial, AutoResearch, Tool-Augmented |
+| Agentic Harnesses | Adversarial, AutoImprove, Tool-Augmented |
 | Data-driven | Stockfish Clone, Large Dataset |
 | Unconventional | Tic-Tac-Toe Baseline, Randomized Features |
 
@@ -88,7 +88,7 @@ The one shared artifact every engine plugs into equally.
 | Tic-Tac-Toe Baseline | — | — | — | — | — | — |
 | Randomized Features | — | — | — | — | — | — |
 
-### Process Quality
+### Process Quality 
 | Engine | Creativity | Avg Move Time | Test Coverage |
 |---|---|---|---|
 | One Shot | — | — | — |
