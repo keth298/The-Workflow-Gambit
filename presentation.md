@@ -151,7 +151,6 @@ More spend did not produce better results. Adversarial spent 8× less than AutoR
 | Strongest output | Adversarial |
 | Minimum cost | Single Shot |
 | Minimum human time | Single Shot |
-| Fully hands-off / async | AutoResearch |
 | Clean, maintainable code | Phased Engine |
 | No domain knowledge required | Single Shot |
 
