@@ -1,4 +1,4 @@
-# The Workflow Gambit: A Controlled Evaluation of AI-Assisted Development Strategies for Chess Engine Programming
+# The Workflow Gambit: A Controlled Evaluation of AI Development Architectures for Chess Engine Programming
 **Cubist Hackathon 2026**
 
 ---
@@ -11,11 +11,16 @@
 
 AI coding tools are everywhere. Nobody agrees on how to use them.
 
-Not which model is best. The workflow: how you structure your interaction
-with the model, how much context you provide, how much autonomy you give it,
-how you verify its output.
+Not which model is best. The **design**: how you structure your interaction
+with the model, how much autonomy you give it, whether you're writing prompts
+or building harnesses, whether the AI is a tool you direct or an agent that
+directs itself.
 
-Everyone has opinions. Nobody has data.
+A one-shot prompt and an adversarial agentic loop are not the same kind of
+thing. They're different architectures for human-AI collaboration — with
+different costs, different failure modes, and different ceilings.
+
+Everyone has intuitions. Nobody has data.
 
 So we ran an experiment.
 
@@ -23,11 +28,10 @@ So we ran an experiment.
 
 ## The Experiment
 
-- 9 engines, 9 workflows, same time budget
-- Shared base `CLAUDE.md` for standardization
-- Single move interface — every engine plugs into the same evaluation system. 
+- 9 engines, 9 workflows spanning the full design space — from single prompts to multi-agent harnesses
+- Shared base `CLAUDE.md` for standardization across all approaches
+- Single move interface — every engine plugs into the same evaluation system
 - Results logged automatically, no manual entry
-
 ---
 
 ## The Workflows
