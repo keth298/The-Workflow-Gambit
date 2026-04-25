@@ -37,7 +37,7 @@ Four philosophies, ten engines.
 | Cluster | Engines |
 |---|---|
 | Basic Prompting | One Shot, Standard Prompting, Phase Implementation |
-| Agentic | Adversarial, AutoImprove, Tool-Augmented |
+| Agentic Harnesses | Adversarial, AutoImprove, Tool-Augmented |
 | Data-driven | Stockfish Clone, Large Dataset |
 | Unconventional | Tic-Tac-Toe Baseline, Randomized Features |
 
@@ -88,7 +88,7 @@ The one shared artifact every engine plugs into equally.
 | Tic-Tac-Toe Baseline | — | — | — | — | — | — |
 | Randomized Features | — | — | — | — | — | — |
 
-### Process Quality
+### Process Quality 
 | Engine | Creativity | Avg Move Time | Test Coverage |
 |---|---|---|---|
 | One Shot | — | — | — |
