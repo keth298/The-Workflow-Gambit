@@ -146,3 +146,10 @@ The winning workflow answers **yes** to the most of:
 - Did it require the least human time and prior knowledge?
 - Could the builder do other work while it ran?
 - Did it produce clean, testable, documented code?
+
+**Bonus: Lichess Bot Integration** 🎯
+- `lichess_bot.py` - Complete Lichess bot client for real ranked games
+- Can earn actual Elo rating by playing against other bots
+- Uses proper time controls and handles multiple games simultaneously
+- Setup guide: `LICHESS_BOT_SETUP.md`
+
