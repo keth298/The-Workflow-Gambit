@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 *)",
+      "Bash(chmod +x /Users/hyun/Documents/GitHub/Point72Hackathon/RAGEngine/setup_fast.sh /Users/hyun/Documents/GitHub/Point72Hackathon/RAGEngine/LargeDataset/download.sh)",
+      "Bash(grep -v \"^$\\\\|already satisfied\\\\|notice\")",
+      "Bash(kaggle datasets *)",
+      "Bash(xargs ls *)"
+    ]
+  }
+}

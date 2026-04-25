@@ -45,3 +45,11 @@ Thumbs.db
 # Stockfish binary (download separately)
 stockfish
 stockfish-*
+
+# RAGEngine — generated files (reproduce with setup_fast.sh)
+RAGEngine/LargeDataset/chess_data.db
+RAGEngine/LargeDataset/faiss.index
+RAGEngine/LargeDataset/id_to_fen.pkl
+RAGEngine/LargeDataset/chess_games/
+RAGEngine/LargeDataset/puzzles/
+RAGEngine/LargeDataset/openings/
