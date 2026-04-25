@@ -26,4 +26,4 @@ def test_clear_removes_all_entries():
     assert tt.probe(2) is None
 
 def test_flag_constants_are_distinct():
-    assert EXACT != LOWER != UPPER
+    assert len({EXACT, LOWER, UPPER}) == 3

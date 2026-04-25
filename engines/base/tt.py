@@ -11,7 +11,9 @@ class TranspositionTable:
         return self._table.get(key)
 
     def store(self, key, depth, flag, score, best_move):
-        self._table[key] = (depth, flag, score, best_move)
+        existing = self._table.get(key)
+        if existing is None or depth >= existing[0]:
+            self._table[key] = (depth, flag, score, best_move)
 
     def clear(self):
         self._table.clear()
