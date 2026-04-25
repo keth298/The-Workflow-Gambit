@@ -1,0 +1,28 @@
+# process_metrics_random_features_v1.yaml
+
+engine_id: random_features_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 168000
+output_tokens: 90813
+estimated_cost_usd: 1.87
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 538
+prompt_count: 15
+human_correction_count: 8
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 3     # some chess eval function knowledge to select features
+frustration_score: 4                  # very long session (nearly 9 hours); many dead-end ideas
+multitaskability_score: 4            # long generation windows allowed stepping away often
+parallelization_score: 3             # individual feature branches could be explored in parallel
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "Outlandish/random feature selection strategy. Wall-clock 8h 58m. ~258,813 total tokens. High token cost for high variance; tournament selected highest-scoring variant."

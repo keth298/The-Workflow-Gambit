@@ -1,0 +1,28 @@
+# process_metrics_phased_engine_v1.yaml
+
+engine_id: phased_engine_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 109000
+output_tokens: 59000
+estimated_cost_usd: 1.21
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 17
+prompt_count: 5
+human_correction_count: 2
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 3     # need to decompose chess engine into well-scoped phases
+frustration_score: 2                  # structured phases made progress predictable
+multitaskability_score: 3            # could step away between phases
+parallelization_score: 2             # phases are sequential by design
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "5 prompts across Planning + 4 implementation phases. Token breakdown — Planning: 59k, Phase1: 28.5k, Phase2: 54.4k, Phase3: 41.9k, Phase4: 40.8k (~168k total). Built in 17 min."

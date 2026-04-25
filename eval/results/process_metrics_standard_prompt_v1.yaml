@@ -1,0 +1,28 @@
+# process_metrics_standard_prompt_v1.yaml
+
+engine_id: standard_prompt_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 75000
+output_tokens: 40000
+estimated_cost_usd: 0.83
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 25
+prompt_count: 7
+human_correction_count: 3
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 2     # basic chess rules + general prompting
+frustration_score: 2                  # mostly smooth, minor re-steering between phases
+multitaskability_score: 2            # needed to review and feed each phase forward
+parallelization_score: 2             # strictly sequential across 6 phases
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "7 prompts spread across 6 development phases. Total 115k tokens. Straightforward iterative approach; each phase built on the last."

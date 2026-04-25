@@ -1,0 +1,28 @@
+# process_metrics_stockfish_replica_v1.yaml
+
+engine_id: stockfish_replica_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 97500
+output_tokens: 52500
+estimated_cost_usd: 1.08
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 90
+prompt_count: 1
+human_correction_count: 1
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 5     # deep Stockfish architecture + C++ SWE knowledge required
+frustration_score: 4                  # hit usage limit at 90 min; C++ segfaults at depth 6+
+multitaskability_score: 1            # required sustained attention to guide the C++ generation
+parallelization_score: 1             # single monolithic prompt, fully sequential
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "1 large prompt targeting Stockfish architecture in C++. Ran 90 min before hitting usage limit. Engine segfaults at search depth 6+; capped at depth 5 for stability."

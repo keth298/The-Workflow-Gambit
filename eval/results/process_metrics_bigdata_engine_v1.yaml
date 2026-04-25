@@ -1,0 +1,28 @@
+# process_metrics_bigdata_engine_v1.yaml
+
+engine_id: bigdata_engine_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 100000
+output_tokens: 54500
+estimated_cost_usd: 1.12
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 40
+prompt_count: 2
+human_correction_count: 3
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 4     # RAG pipeline + dataset curation requires ML/IR knowledge
+frustration_score: 3                  # 25 min of training/debugging after 15 min model competition
+multitaskability_score: 3            # training runs allowed stepping away; debugging required attention
+parallelization_score: 3             # model competition phase is inherently parallel
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "RAG-based engine over large chess dataset. ~154.5k total tokens, 2 prompts, 40 min total (15 min model competition + 25 min training & debugging). Requires torch/faiss; disabled pending install."

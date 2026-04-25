@@ -1,0 +1,28 @@
+# process_metrics_adversarial_v1.yaml
+
+engine_id: adversarial_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 52000
+output_tokens: 28000
+estimated_cost_usd: 0.58
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 40
+prompt_count: 8
+human_correction_count: 4
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 3     # need to frame adversarial critique prompts effectively
+frustration_score: 3                  # back-and-forth critic/fix cycles add friction
+multitaskability_score: 3            # partially async; must review each critique round
+parallelization_score: 2             # critic and generator are inherently sequential
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "Adversarial critic-generator loop. ~80k total tokens over 40 min. Critic agent identifies weaknesses; generator addresses them each round. 8 rounds total."

@@ -1,0 +1,28 @@
+# process_metrics_buildup_model_v1.yaml
+
+engine_id: buildup_model_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 83000
+output_tokens: 45000
+estimated_cost_usd: 0.92
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 30
+prompt_count: 1
+human_correction_count: 1
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 2     # incremental complexity reduces chess knowledge needed upfront
+frustration_score: 2                  # smooth progression; each game stage validated before escalating
+multitaskability_score: 3            # could step away between TicTacToe / Checkers / Chess stages
+parallelization_score: 2             # game-complexity ladder is inherently sequential
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "Single prompt driving incremental complexity: TicTacToe (25.5k tokens, ~6 min) → Checkers (25.1k tokens, ~6 min) → Chess (77.4k tokens, ~18 min). Total ~128k tokens / 30 min."

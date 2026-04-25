@@ -1,0 +1,28 @@
+# process_metrics_single_shot_v1.yaml
+
+engine_id: single_shot_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 29000
+output_tokens: 16000
+estimated_cost_usd: 0.33
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 15
+prompt_count: 1
+human_correction_count: 0
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 1     # minimal — just describe a chess engine in plain language
+frustration_score: 1                  # completely smooth; single response, no iteration
+multitaskability_score: 5            # fully async after sending the prompt
+parallelization_score: 5             # trivially parallelizable; nothing to sequence
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "One prompt, one response. Wall-clock ~891 s (~15 min). ~45k total tokens. Lowest human effort of all approaches."

@@ -1,0 +1,28 @@
+# process_metrics_autoresearch_v1.yaml
+
+engine_id: autoresearch_v1
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 260000
+output_tokens: 140000
+estimated_cost_usd: 2.88
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 150
+prompt_count: 20
+human_correction_count: 2
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 2     # kick-off prompt only; agent handles self-directed research
+frustration_score: 2                  # mostly hands-off; occasional course correction
+multitaskability_score: 5            # fully async during research loops
+parallelization_score: 4             # internal research branches run concurrently
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0
+test_count: 0
+test_pass_rate: 0.0
+doc_word_count: 0
+
+# ---- Notes -------------------------------------------------------- #
+notes: "Autonomous research agent iterating over chess strategy literature. ~400k total tokens over 2.5 hours. Highest token count of all approaches; minimal active human involvement."
