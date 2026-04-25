@@ -103,7 +103,7 @@ def _is_endgame(board):
         MATERIAL[pt] * (len(board.pieces(pt, chess.WHITE)) + len(board.pieces(pt, chess.BLACK)))
         for pt in (chess.QUEEN, chess.ROOK, chess.BISHOP, chess.KNIGHT)
     )
-    return total < 2000
+    return total < 1300
 
 
 def evaluate(board):

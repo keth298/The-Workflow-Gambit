@@ -1,5 +1,5 @@
 import chess
-from evaluate import evaluate, MATERIAL
+from evaluate import evaluate
 
 
 def test_starting_position_is_zero():
