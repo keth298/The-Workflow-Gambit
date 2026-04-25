@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adversarial Engine — Live Demo</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 20px;
+}
+
+.header { text-align: center; }
+.header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.header .sub { color: #8b949e; font-size: 13px; margin-top: 4px; }
+
+.iteration-bar {
+  display: flex; align-items: center; gap: 10px;
+  justify-content: center; margin-top: 14px;
+}
+.iter-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 1.5px; }
+.dots { display: flex; gap: 8px; }
+.dot {
+  width: 11px; height: 11px; border-radius: 50%;
+  background: #21262d; border: 1px solid #30363d;
+  transition: all 0.3s;
+}
+.dot.active { background: #58a6ff; border-color: #58a6ff; box-shadow: 0 0 8px #58a6ff80; }
+.dot.done   { background: #238636; border-color: #2ea043; }
+
+.main { display: flex; gap: 18px; align-items: flex-start; }
+
+/* ── Agent panels ── */
+.panel {
+  width: 230px;
+  min-height: 500px;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.panel-b { background: #0d1f3c; border: 1px solid #1f4080; }
+.panel-a { background: #1f0d0d; border: 1px solid #802020; }
+
+.panel-head {
+  display: flex; align-items: center; gap: 8px;
+  padding-bottom: 10px; border-bottom: 1px solid;
+}
+.panel-b .panel-head { border-color: #1f4080; }
+.panel-a .panel-head { border-color: #802020; }
+
+.icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800;
+}
+.icon-b { background: #1f4080; color: #58a6ff; }
+.icon-a { background: #801f1f; color: #ff7b72; }
+
+.agent-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+.panel-b .agent-label { color: #58a6ff; }
+.panel-a .agent-label { color: #ff7b72; }
+
+.status { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #8b949e; }
+.sdot { width: 6px; height: 6px; border-radius: 50%; background: #8b949e; }
+.sdot.on { background: #3fb950; animation: blink 1.6s infinite; }
+.sdot.atk { background: #ff7b72; animation: blink 1.6s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.term {
+  flex: 1;
+  font-family: 'Cascadia Code','Fira Code','Courier New',monospace;
+  font-size: 11.5px; line-height: 1.75;
+  overflow-y: auto; min-height: 380px;
+}
+.tline { display: flex; gap: 5px; animation: fi .2s ease; }
+@keyframes fi { from{opacity:0;transform:translateY(3px)} to{opacity:1;transform:none} }
+.tpfx { opacity: .45; flex-shrink: 0; }
+.panel-b .tpfx { color: #58a6ff; }
+.panel-a .tpfx { color: #ff7b72; }
+.ttxt { color: #c9d1d9; }
+.ttxt.ok  { color: #3fb950; font-weight: 600; }
+.ttxt.warn{ color: #d29922; }
+.ttxt.err { color: #ff7b72; }
+.ttxt.dim { color: #484f58; }
+
+/* ── Chess area ── */
+.chess-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+.board-outer { position: relative; }
+.flabels {
+  display: grid; grid-template-columns: repeat(8,62px);
+  font-size: 10px; color: #484f58; text-align: center;
+  margin-bottom: 2px; letter-spacing: .5px;
+}
+.rlabels {
+  position: absolute; left: -16px; top: 0; height: 100%;
+  display: flex; flex-direction: column; justify-content: space-around;
+  font-size: 10px; color: #484f58;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 62px);
+  grid-template-rows: repeat(8, 62px);
+  border: 2px solid #30363d;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.6);
+}
+
+.sq { width:62px; height:62px; display:flex; align-items:center; justify-content:center; font-size:38px; position:relative; transition:background .2s; }
+.sq.lt { background: #f0d9b5; }
+.sq.dk { background: #b58863; }
+.sq.hl-from    { background: #cdd16f !important; }
+.sq.hl-to      { background: #aaa23a !important; }
+.sq.hl-capture { background: #cc4444 !important; }
+
+.piece { user-select:none; line-height:1; }
+.piece.w { color:#fffef0; text-shadow:0 0 3px #000,0 0 1px #000; }
+.piece.b { color:#1a1210; text-shadow:0 0 3px #fff8,0 0 1px #fff4; }
+
+.move-display {
+  font-family: monospace; font-size: 13px;
+  color: #8b949e; min-height: 22px; text-align: center;
+}
+.move-display .cur { color: #58a6ff; font-weight: bold; }
+
+/* ── Controls ── */
+.controls { display:flex; gap:10px; align-items:center; }
+button {
+  padding: 8px 20px; border-radius: 6px; border: none;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all .15s; letter-spacing: .3px;
+}
+.btn-go  { background:#238636; color:#fff; }
+.btn-go:hover { background:#2ea043; }
+.btn-rst { background:#21262d; color:#e6edf3; border:1px solid #30363d; }
+.btn-rst:hover { background:#30363d; }
+button:disabled { opacity:.4; cursor:not-allowed; }
+
+/* ── Score strip ── */
+.scores { display:flex; gap:24px; margin-top:4px; }
+.sc { text-align:center; }
+.sc-lbl { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:#8b949e; }
+.sc-val { font-size:22px; font-weight:700; font-family:monospace; }
+.sc-val.blue { color:#58a6ff; }
+.sc-val.red  { color:#ff7b72; }
+.sc-val.grn  { color:#3fb950; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>The Adversarial Approach</h1>
+  <div class="sub">Builder Agent ↔ Attacker Agent — iterative adversarial refinement</div>
+  <div class="iteration-bar">
+    <span class="iter-label">Iteration</span>
+    <div class="dots">
+      <div class="dot" id="d0"></div>
+      <div class="dot" id="d1"></div>
+      <div class="dot" id="d2"></div>
+      <div class="dot" id="d3"></div>
+      <div class="dot" id="d4"></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Builder -->
+  <div class="panel panel-b">
+    <div class="panel-head">
+      <div class="icon icon-b">B</div>
+      <div>
+        <div class="agent-label">Builder Agent</div>
+        <div class="status">
+          <div class="sdot" id="bsdot"></div>
+          <span id="bstxt">Idle</span>
+        </div>
+      </div>
+    </div>
+    <div class="term" id="blog"></div>
+  </div>
+
+  <!-- Chess -->
+  <div class="chess-wrap">
+    <div class="board-outer">
+      <div class="rlabels"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+      <div class="flabels"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+      <div id="board"></div>
+    </div>
+    <div class="move-display" id="mvdisp">Starting position</div>
+    <div class="controls">
+      <button class="btn-rst" onclick="reset()">↺ Reset</button>
+      <button class="btn-go"  id="sbtn" onclick="start()">▶ Start Demo</button>
+    </div>
+    <div class="scores">
+      <div class="sc"><div class="sc-lbl">Strength</div><div class="sc-val grn" id="sstr">—</div></div>
+      <div class="sc"><div class="sc-lbl">Flaws</div><div class="sc-val red"  id="sflw">0</div></div>
+      <div class="sc"><div class="sc-lbl">Fixes</div><div class="sc-val blue" id="sfix">0</div></div>
+    </div>
+  </div>
+
+  <!-- Attacker -->
+  <div class="panel panel-a">
+    <div class="panel-head">
+      <div class="icon icon-a">A</div>
+      <div>
+        <div class="agent-label">Attacker Agent</div>
+        <div class="status">
+          <div class="sdot" id="asdot"></div>
+          <span id="astxt">Waiting</span>
+        </div>
+      </div>
+    </div>
+    <div class="term" id="alog"></div>
+  </div>
+
+</div>
+
+<script>
+// ── Pieces ──────────────────────────────────────────────────
+const UNI = {K:'♔',Q:'♕',R:'♖',B:'♗',N:'♘',P:'♙',k:'♚',q:'♛',r:'♜',b:'♝',n:'♞',p:'♟',' ':''};
+const isW = p => p >= 'A' && p <= 'Z';
+
+const INIT = [
+  ['r','n','b','q','k','b','n','r'],
+  ['p','p','p','p','p','p','p','p'],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  ['P','P','P','P','P','P','P','P'],
+  ['R','N','B','Q','K','B','N','R']
+];
+
+let board;
+
+// ── Ruy Lopez — 10 moves each side ──────────────────────────
+// [fr, fc, tr, tc, notation, isCapture, special?]
+const MOVES = [
+  [6,4, 4,4, '1. e4',      false],
+  [1,4, 3,4, '1... e5',    false],
+  [7,6, 5,5, '2. Nf3',     false],
+  [0,1, 2,2, '2... Nc6',   false],
+  [7,5, 3,1, '3. Bb5',     false],
+  [1,0, 2,0, '3... a6',    false],
+  [3,1, 4,0, '4. Ba4',     false],
+  [0,6, 2,5, '4... Nf6',   false],
+  [7,4, 7,6, '5. O-O',     false, 'cw'],
+  [0,5, 1,4, '5... Be7',   false],
+  [7,5, 7,4, '6. Re1',     false],
+  [1,1, 3,1, '6... b5',    false],
+  [4,0, 5,1, '7. Bb3',     false],
+  [1,3, 2,3, '7... d6',    false],
+  [6,2, 5,2, '8. c3',      false],
+  [0,4, 0,6, '8... O-O',   false, 'cb'],
+  [6,7, 5,7, '9. h3',      false],
+  [2,2, 0,1, '9... Nb8',   false],
+  [6,3, 4,3, '10. d4',     false],
+  [0,1, 1,3, '10... Nbd7', false],
+];
+
+let moveIdx = 0;
+let moveTimer = null;
+let running = false;
+
+// ── Adversarial cycles ───────────────────────────────────────
+const CYCLES = [
+  {
+    b: [
+      ['Initializing engine...', ''],
+      ['Generating all legal moves', ''],
+      ['Material eval: P=1 N=3 B=3 R=5 Q=9', 'ok'],
+      ['Search: random legal move', 'warn'],
+      ['No positional awareness yet', 'warn'],
+      ['v0.1 compiled. Awaiting critique.', ''],
+    ],
+    a: [
+      ['Probing v0.1...', ''],
+      ['FLAW: No positional eval', 'err'],
+      ['Exploit: King walks to center', 'err'],
+      ['FLAW: No search tree at all', 'err'],
+      ['Engine plays random legal moves', 'warn'],
+      ['2 critical flaws. Returning to builder.', 'warn'],
+    ],
+    str:'D', flw:2, fix:0
+  },
+  {
+    b: [
+      ['Integrating attacker feedback...', ''],
+      ['Adding minimax search, depth=2', 'ok'],
+      ['Adding king safety penalty: -50', 'ok'],
+      ['Penalizing exposed king squares', ''],
+      ['Detecting open files near king', ''],
+      ['v0.2 compiled. Awaiting critique.', ''],
+    ],
+    a: [
+      ['Probing v0.2...', ''],
+      ['FLAW: Depth-2 horizon effect', 'err'],
+      ['Exploit: 3-move tactics invisible', 'err'],
+      ['FLAW: No piece-square tables', 'err'],
+      ['Knights placed poorly on rim', 'warn'],
+      ['2 critical flaws. Returning to builder.', 'warn'],
+    ],
+    str:'C', flw:4, fix:2
+  },
+  {
+    b: [
+      ['Integrating attacker feedback...', ''],
+      ['Upgrading to alpha-beta pruning', 'ok'],
+      ['Search depth increased to 4 plies', 'ok'],
+      ['Piece-square tables added', 'ok'],
+      ['  Knights prefer center (+20)', ''],
+      ['  Bishops prefer open diagonals', ''],
+      ['v0.3 compiled. Awaiting critique.', ''],
+    ],
+    a: [
+      ['Probing v0.3...', ''],
+      ['FLAW: No endgame king activity', 'err'],
+      ['King stays passive vs passed pawns', 'err'],
+      ['FLAW: Pawn structure ignored', 'err'],
+      ['Isolated pawns not penalized', 'warn'],
+      ['2 critical flaws. Returning to builder.', 'warn'],
+    ],
+    str:'B', flw:6, fix:4
+  },
+  {
+    b: [
+      ['Integrating attacker feedback...', ''],
+      ['Pawn structure evaluation added', 'ok'],
+      ['  Doubled pawns:  -20', ''],
+      ['  Isolated pawns: -15', ''],
+      ['  Passed pawns:   +30', ''],
+      ['Endgame king activity bonus added', 'ok'],
+      ['v0.4 compiled. Awaiting critique.', ''],
+    ],
+    a: [
+      ['Probing v0.4...', ''],
+      ['FLAW: No iterative deepening', 'err'],
+      ['Timeout risk on long time controls', 'err'],
+      ['FLAW: No transposition table', 'err'],
+      ['Re-evaluates previously seen positions', 'warn'],
+      ['2 critical flaws. Returning to builder.', 'warn'],
+    ],
+    str:'A-', flw:8, fix:6
+  },
+  {
+    b: [
+      ['Final attacker feedback applied...', ''],
+      ['Iterative deepening enabled', 'ok'],
+      ['Transposition table: 64MB cache', 'ok'],
+      ['Time management tuned', 'ok'],
+      ['──────────────────────────', 'dim'],
+      ['✓ v1.0 finalized', 'ok'],
+      ['✓ Round robin record: 40 / 40', 'ok'],
+    ],
+    a: [
+      ['Final probe of v1.0...', ''],
+      ['Testing tactics...     ✓', 'ok'],
+      ['Testing endgame...     ✓', 'ok'],
+      ['Testing time mgmt...   ✓', 'ok'],
+      ['Testing king safety... ✓', 'ok'],
+      ['──────────────────────────', 'dim'],
+      ['✓ No critical flaws found', 'ok'],
+      ['✓ Engine certified. Shipping.', 'ok'],
+    ],
+    str:'A', flw:8, fix:8
+  }
+];
+
+// ── Board rendering ──────────────────────────────────────────
+function render(hf=null, ht=null, cap=false) {
+  const el = document.getElementById('board');
+  el.innerHTML = '';
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const sq = document.createElement('div');
+      sq.className = 'sq ' + ((r+c)%2===0 ? 'lt' : 'dk');
+      if (hf && r===hf[0] && c===hf[1]) sq.classList.add('hl-from');
+      if (ht && r===ht[0] && c===ht[1]) sq.classList.add(cap ? 'hl-capture' : 'hl-to');
+      const p = board[r][c];
+      if (p && p !== ' ') {
+        const sp = document.createElement('span');
+        sp.className = 'piece ' + (isW(p) ? 'w' : 'b');
+        sp.textContent = UNI[p];
+        sq.appendChild(sp);
+      }
+      el.appendChild(sq);
+    }
+  }
+}
+
+function doMove(m) {
+  const [fr,fc,tr,tc,note,cap,special] = m;
+  board[tr][tc] = board[fr][fc];
+  board[fr][fc] = ' ';
+  if (special === 'cw') { board[7][5]='R'; board[7][7]=' '; }
+  if (special === 'cb') { board[0][5]='r'; board[0][7]=' '; }
+  document.getElementById('mvdisp').innerHTML = '<span class="cur">'+note+'</span>';
+  render([fr,fc],[tr,tc],cap);
+}
+
+// ── Terminal ─────────────────────────────────────────────────
+function addLine(id, txt, cls) {
+  const log = document.getElementById(id);
+  const line = document.createElement('div');
+  line.className = 'tline';
+  const pfx = document.createElement('span');
+  pfx.className = 'tpfx';
+  pfx.textContent = id === 'blog' ? '>' : '!';
+  const t = document.createElement('span');
+  t.className = 'ttxt' + (cls ? ' '+cls : '');
+  t.textContent = txt;
+  line.appendChild(pfx);
+  line.appendChild(t);
+  log.appendChild(line);
+  log.scrollTop = log.scrollHeight;
+}
+
+function setStatus(who, state, txt) {
+  document.getElementById(who+'sdot').className = 'sdot ' + (state==='on'?'on':state==='atk'?'atk':'');
+  document.getElementById(who+'stxt').textContent = txt;
+}
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ── Demo ─────────────────────────────────────────────────────
+let live = false;
+let chessTimer = null;
+
+async function start() {
+  if (live) return;
+  live = true;
+  document.getElementById('sbtn').disabled = true;
+
+  board = INIT.map(r=>[...r]);
+  moveIdx = 0;
+  render();
+
+  // Chess moves play alongside adversarial dialogue
+  function tick() {
+    if (moveIdx < MOVES.length && live) {
+      doMove(MOVES[moveIdx++]);
+      chessTimer = setTimeout(tick, 1600);
+    }
+  }
+  tick();
+
+  for (let i = 0; i < CYCLES.length; i++) {
+    const cy = CYCLES[i];
+
+    // Dots
+    for (let j=0;j<5;j++) {
+      document.getElementById('d'+j).className = 'dot'+(j<i?' done':j===i?' active':'');
+    }
+
+    // Builder phase
+    setStatus('b','on','Building...');
+    setStatus('a','','Waiting...');
+    for (const [txt, cls] of cy.b) { await sleep(520); addLine('blog', txt, cls); }
+    setStatus('b','','Done');
+
+    await sleep(600);
+
+    // Attacker phase
+    setStatus('a','atk','Attacking...');
+    for (const [txt, cls] of cy.a) { await sleep(520); addLine('alog', txt, cls); }
+    setStatus('a','','Done');
+
+    document.getElementById('sstr').textContent = cy.str;
+    document.getElementById('sflw').textContent = cy.flw;
+    document.getElementById('sfix').textContent = cy.fix;
+
+    if (i < 4) {
+      await sleep(300);
+      addLine('blog','─────────────────────','dim');
+      addLine('alog','─────────────────────','dim');
+    }
+
+    await sleep(500);
+  }
+
+  // Final dots
+  for (let j=0;j<5;j++) document.getElementById('d'+j).className='dot done';
+  clearTimeout(chessTimer);
+  live = false;
+  document.getElementById('sbtn').disabled = false;
+}
+
+function reset() {
+  live = false;
+  clearTimeout(chessTimer);
+  board = INIT.map(r=>[...r]);
+  moveIdx = 0;
+  render();
+  document.getElementById('blog').innerHTML = '';
+  document.getElementById('alog').innerHTML = '';
+  document.getElementById('mvdisp').textContent = 'Starting position';
+  document.getElementById('sstr').textContent = '—';
+  document.getElementById('sflw').textContent = '0';
+  document.getElementById('sfix').textContent = '0';
+  setStatus('b','','Idle');
+  setStatus('a','','Waiting');
+  for (let j=0;j<5;j++) document.getElementById('d'+j).className='dot';
+  document.getElementById('sbtn').disabled = false;
+}
+
+render();
+</script>
+</body>
+</html>

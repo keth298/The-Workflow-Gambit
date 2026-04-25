@@ -3,11 +3,26 @@
 
 ---
 
+## Research Question
+
+**What is the most effective software development workflow when using AI as a coding assistant?**
+
 Everyone uses AI. Nobody agrees on how.
 
 - Some engineers don't trust it — holding its hand through every step
 - Some describe the problem and walk away
 - Some don't even read the output before shipping
+
+---
+
+## Hypothesis
+
+We hypothesized that **more structured, iterative workflows would produce higher-quality output** — and that **more tokens spent and more human involvement would correlate with better results**.
+
+Specifically, we predicted:
+- Agentic loops (AutoResearch, Adversarial) would outperform single-shot prompting
+- Data-informed approaches (Stockfish Replica, Large Dataset) would produce stronger engines than naive prompting
+- Cost and output quality would trend together
 
 We stopped arguing and ran an experiment.
 
@@ -161,3 +176,16 @@ We went in thinking this was a chess problem.
 It turned out to be a workflow problem.
 
 The chess engine was just the test harness.
+
+---
+
+## Live Demo
+
+Open **`demo.html`** in a browser.
+
+- Left panel — **Builder Agent:** generates the engine, applies fixes from each critique round
+- Right panel — **Attacker Agent:** probes for weaknesses, returns specific exploits to the builder
+- Center — **Chess board** playing a live game as the engine evolves through 5 iterations
+- Iteration dots and strength score update in real time as each cycle completes
+
+Click **▶ Start Demo** to run. Click **↺ Reset** to replay.
