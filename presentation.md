@@ -11,8 +11,8 @@
 
 AI coding tools are everywhere. Nobody agrees on how to use them.
 
-Not which model is best. The workflow: how you structure your interaction 
-with the model, how much context you provide, how much autonomy you give it, 
+Not which model is best. The workflow: how you structure your interaction
+with the model, how much context you provide, how much autonomy you give it,
 how you verify its output.
 
 Everyone has opinions. Nobody has data.
@@ -32,15 +32,14 @@ So we ran an experiment.
 
 ## The Workflows
 
-Five philosophies, ten engines.
+Four philosophies, ten engines.
 
-| Philosophy | Engines |
+| Cluster | Engines |
 |---|---|
-| Minimal intervention | Single Shot, Single Shot + Context |
-| Structured process | Phase Implementation, Tool-Augmented |
-| Autonomous / Agentic | AutoResearch, Org Structure |
-| Knowledge-first | Stockfish Clone (verbatim), Stockfish Clone (understood), Large Dataset |
-| Adversarial | GAN / Adversarial |
+| Basic Prompting | One Shot, Standard Prompting, Phase Implementation |
+| Agentic | Adversarial, AutoResearch, Tool-Augmented |
+| Data-driven | Stockfish Clone, Large Dataset |
+| Unconventional | Tic-Tac-Toe Baseline, Randomized Features |
 
 *Each engine ships with its full `CLAUDE.md` — every prompt, every constraint.*
 
@@ -62,46 +61,46 @@ The one shared artifact every engine plugs into equally.
 ## Results
 
 ### Output Quality
-| Engine | Elo | vs. Stockfish | Puzzle Accuracy | Illegal Moves |
-|---|---|---|---|---|
-| Single Shot | — | — | — | — |
-| Single Shot + Context | — | — | — | — |
-| Phase Implementation | — | — | — | — |
-| AutoResearch | — | — | — | — |
-| Tool-Augmented | — | — | — | — |
-| GAN / Adversarial | — | — | — | — |
-| Org Structure | — | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — | — |
-| Stockfish Clone (understood) | — | — | — | — |
-| Large Dataset | — | — | — | — |
+| Engine | Cluster | Elo | vs. Stockfish | Puzzle Accuracy | Illegal Moves |
+|---|---|---|---|---|---|
+| One Shot | Basic | — | — | — | — |
+| Standard Prompting | Basic | — | — | — | — |
+| Phase Implementation | Basic | — | — | — | — |
+| Adversarial | Agentic | — | — | — | — |
+| AutoResearch | Agentic | — | — | — | — |
+| Tool-Augmented | Agentic | — | — | — | — |
+| Stockfish Clone | Data-driven | — | — | — | — |
+| Large Dataset | Data-driven | — | — | — | — |
+| Tic-Tac-Toe Baseline | Unconventional | — | — | — | — |
+| Randomized Features | Unconventional | — | — | — | — |
 
 ### Workflow Cost
 | Engine | Token Cost | Human Time | Prompt Count | Correction Rate | Prior Knowledge | Parallelizable |
 |---|---|---|---|---|---|---|
-| Single Shot | — | — | — | — | — | — |
-| Single Shot + Context | — | — | — | — | — | — |
+| One Shot | — | — | — | — | — | — |
+| Standard Prompting | — | — | — | — | — | — |
 | Phase Implementation | — | — | — | — | — | — |
+| Adversarial | — | — | — | — | — | — |
 | AutoResearch | — | — | — | — | — | — |
 | Tool-Augmented | — | — | — | — | — | — |
-| GAN / Adversarial | — | — | — | — | — | — |
-| Org Structure | — | — | — | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — | — | — | — |
-| Stockfish Clone (understood) | — | — | — | — | — | — |
+| Stockfish Clone | — | — | — | — | — | — |
 | Large Dataset | — | — | — | — | — | — |
+| Tic-Tac-Toe Baseline | — | — | — | — | — | — |
+| Randomized Features | — | — | — | — | — | — |
 
 ### Process Quality
 | Engine | Creativity | Avg Move Time | Test Coverage |
 |---|---|---|---|
-| Single Shot | — | — | — |
-| Single Shot + Context | — | — | — |
+| One Shot | — | — | — |
+| Standard Prompting | — | — | — |
 | Phase Implementation | — | — | — |
+| Adversarial | — | — | — |
 | AutoResearch | — | — | — |
 | Tool-Augmented | — | — | — |
-| GAN / Adversarial | — | — | — |
-| Org Structure | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — |
-| Stockfish Clone (understood) | — | — | — |
+| Stockfish Clone | — | — | — |
 | Large Dataset | — | — | — |
+| Tic-Tac-Toe Baseline | — | — | — |
+| Randomized Features | — | — | — |
 
 ---
 
@@ -116,7 +115,7 @@ The one shared artifact every engine plugs into equally.
 | 2 | — | — |
 | 3 | — | — |
 
-### The Tradeoff Matrix
+### Tradeoff Matrix
 | If you're optimizing for... | Use this workflow |
 |---|---|
 | Strongest output, have domain knowledge | — |
@@ -137,7 +136,7 @@ The one shared artifact every engine plugs into equally.
 
 | Member | Engine(s) Owned | Role |
 |---|---|---|
-| [NAME] | — | Harness + [engine] |
+| [NAME] | Harness + [engine] | — |
 | [NAME] | — | — |
 | [NAME] | — | — |
 | [NAME] | — | — |
