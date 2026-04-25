@@ -23,13 +23,14 @@ import chess
 import chess.engine
 from dotenv import load_dotenv
 
-ENGINE_DIR = Path(__file__).parent.resolve()
-load_dotenv(ENGINE_DIR / ".env")
-CHAMPION_DIR = ENGINE_DIR / "champion"
-BASELINE_DIR = ENGINE_DIR / "baseline"
-LOG_FILE = ENGINE_DIR / "autoresearch_log.json"
+AUTORESEARCH_DIR = Path(__file__).parent.resolve()
+ENGINE_DIR = AUTORESEARCH_DIR.parent / "PhasedEngine"
+load_dotenv(AUTORESEARCH_DIR / ".env")
+CHAMPION_DIR = AUTORESEARCH_DIR / "champion"
+BASELINE_DIR = AUTORESEARCH_DIR / "baseline"
+LOG_FILE = AUTORESEARCH_DIR / "autoresearch_log.json"
 EVAL_FILE = ENGINE_DIR / "evaluation.py"
-GRAPH_FILE = ENGINE_DIR / "autoresearch_progress.png"
+GRAPH_FILE = AUTORESEARCH_DIR / "autoresearch_progress.png"
 
 SNAPSHOT_FILES = [
     "engine.py",

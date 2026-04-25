@@ -1,0 +1,4 @@
+python-chess>=1.10
+anthropic>=0.25
+python-dotenv>=1.0
+matplotlib>=3.7
