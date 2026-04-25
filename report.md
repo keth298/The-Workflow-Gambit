@@ -7,78 +7,70 @@
 
 Everyone uses AI to code. Nobody agrees on how.
 
-We built **12 chess engines**, each using a fundamentally different AI-assisted workflow. Same problem. Same time budget. Different process. Then we made them fight.
+We built **12 chess engines** — same problem, same time budget, different workflow each time — then made them fight. The goal wasn't to build a great chess engine. It was to find out which approach to AI-assisted development actually produces the best result, and by what definition of "best."
 
-> **Spoiler: no single workflow sweeps. The tradeoffs between strength, cost, and effort *are* the finding.**
-
-Which workflow produces the best outcome depends entirely on what you're optimizing for — and that's what this report shows.
+No single workflow swept. The tradeoffs between strength, cost, and effort are the finding.
 
 ---
 
-## Why So Many Engines?
+## Why 12?
 
-We disagreed.
+We disagreed on the right approach and couldn't resolve it by talking about it.
 
-When deciding how to build a chess engine with AI, the team couldn't reach consensus on the right approach. Should you give the model full context upfront or let it discover the problem? Does mimicking an existing strong engine beat building from first principles? Is a hands-off self-improving loop better than careful human steering?
+Should you front-load the model with full context, or let it discover the problem? Does cloning a strong existing engine beat building from scratch? Is a hands-off agentic loop better than careful human steering?
 
-Rather than debate it, we built both sides of every disagreement and let the results decide.
+We picked a side on each disagreement, built it, and let the results arbitrate.
 
 ---
 
 ## The Engines
 
-Each engine is the artifact of one distinct AI development approach. Every engine ships with the `CLAUDE.md` used to build it.
+Each engine ships with the `CLAUDE.md` used to build it.
 
 | Engine | Owner | Going-in Hypothesis | Approach |
 |---|---|---|---|
-| GAN / Adversarial | — | — | Generate outlandish candidate ideas, adversarially select the best |
+| GAN / Adversarial | — | — | Generate outlandish candidates, adversarially select the best |
 | Single Shot | — | — | Standard prompting, no scaffolding |
 | Single Shot + Context | — | — | Standard prompting with supplied background knowledge |
-| Phase Implementation | — | — | Milestone agents, one per build stage |
-| AutoResearch (Ralphing) | — | — | Hands-off, self-improving loop with minimal human input |
-| Tool-Augmented LLM | — | — | AI with access to search, databases, and external tools |
-| Stockfish Clone (verbatim) | — | — | Reproduce Stockfish logic directly from existing material |
+| Phase Implementation | — | — | One milestone agent per build stage |
+| AutoResearch (Ralphing) | — | — | Hands-off loop, minimal human input |
+| Tool-Augmented LLM | — | — | AI with search, databases, and external tools |
+| Stockfish Clone (verbatim) | — | — | Reproduce Stockfish directly from source material |
 | Stockfish Clone (understood) | — | — | Reproduce Stockfish from human-interpreted understanding |
-| Tic-Tac-Toe Baseline | — | — | Intentionally underbuilt reference point to anchor the lower bound |
-| Org Structure | — | — | CTO + subagent "hires" mirroring an engineering organization |
-| AlphaGo-style | — | — | MCTS + self-play learning approach |
-| Large Dataset | — | — | Engine primed with opening books, endgame tables, curated positions |
+| Tic-Tac-Toe Baseline | — | — | Intentionally underbuilt, anchors the lower bound |
+| Org Structure | — | — | CTO + subagent hires mirroring an engineering org |
+| AlphaGo-style | — | — | MCTS + self-play |
+| Large Dataset | — | — | Primed with opening books, endgame tables, curated positions |
 
 ---
 
-## The Tournament
+## The Tournament Harness
 
-The tournament harness was a shared collaborative artifact — the one piece every engine had to plug into equally.
+The harness was the one shared artifact every engine had to plug into equally. All engines expose the same move interface. Time controls are fixed and enforced externally. Illegal moves are auto-adjudicated as a loss. Results log automatically — no manual entry.
 
 **Built by:** —
 
-**Design constraints:**
-- All engines expose the same move interface so the harness is engine-agnostic
-- Time control is fixed and enforced externally — engines with different move-time profiles compete on equal footing
-- Illegal moves are auto-adjudicated as a loss; no manual review
-- Match results are logged to a shared results file; no manual entry
-
 **Format:**
-- **Round robin** — every engine plays every other, both sides of each pairing
-- **Double elimination** — bracket seeded from round-robin results
-- **Stockfish baseline** — all engines play a fixed-depth Stockfish reference to generate a common Elo proxy
+- Round robin — every engine plays every other, both colors
+- Double elimination — bracket seeded from round-robin standings
+- Stockfish baseline — all engines play fixed-depth Stockfish to generate a common Elo proxy
 
 ---
 
 ## Evaluation
 
-### Tournament (Raw Power)
+### Tournament
 | Metric | Format |
 |---|---|
 | Round robin | Every engine plays every other |
 | Double elimination | Bracket to test consistency under pressure |
-| Elo-style rating | Derived from match outcomes |
+| Elo rating | Derived from match outcomes |
 | Stockfish baseline | Fixed-depth comparison against a known reference |
 
 ### Engine Quality
 | Metric | Measurement |
 |---|---|
-| Tactical puzzle accuracy | % correct on shared curated position set |
+| Tactical puzzle accuracy | % correct on a shared curated position set |
 | Illegal move rate | Should be 0 — any nonzero is disqualifying |
 | Blunder rate | Errors on curated critical positions |
 | Avg move time | Seconds per move |
@@ -96,7 +88,7 @@ The tournament harness was a shared collaborative artifact — the one piece eve
 |---|---|
 | Lines of code | Raw size |
 | Test coverage | % |
-| Creativity | Novelty of approach relative to standard engine design |
+| Creativity | Novelty relative to standard engine design |
 
 ---
 
@@ -140,9 +132,12 @@ The tournament harness was a shared collaborative artifact — the one piece eve
 
 *To be filled after results.*
 
-The winning workflow answers **yes** to the most of:
+The best workflow depends on what you're optimizing for. After results, we'll score each engine on:
+
 - Did it win the tournament?
 - Was it the cheapest to run?
 - Did it require the least human time and prior knowledge?
 - Could the builder do other work while it ran?
 - Did it produce clean, testable, documented code?
+
+If no single workflow wins on all five — the tradeoffs are the answer.
