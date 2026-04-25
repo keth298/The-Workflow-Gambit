@@ -1,5 +1,5 @@
 # Which AI Development Workflow Actually Wins?
-**Cubist Hackathon 2026 — Prinell**
+**Cubist Hackathon 2026**
 
 ---
 

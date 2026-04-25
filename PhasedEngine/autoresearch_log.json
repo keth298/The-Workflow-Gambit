@@ -1,0 +1,362 @@
+[
+  {
+    "iteration": 1,
+    "rationale": "Add a passed pawn bonus that rewards pawns with no opposing pawns blocking or attacking their advance path, scaled by how far advanced they are.",
+    "wins": 0,
+    "draws": 1,
+    "losses": 3,
+    "score": 0.125,
+    "accepted": false,
+    "timestamp": 1777101411.104715
+  },
+  {
+    "iteration": 2,
+    "rationale": "Add a mobility bonus by counting legal moves for each side (approximated via attacks/pseudo-legal moves per piece) to reward active piece placement.",
+    "wins": 3,
+    "draws": 1,
+    "losses": 0,
+    "score": 0.875,
+    "accepted": true,
+    "timestamp": 1777130484.172744
+  },
+  {
+    "iteration": 3,
+    "rationale": "Add a passed pawn bonus scaled by rank advancement, since passed pawns are a key endgame winning factor and this feature was previously reverted likely due to a bug.",
+    "wins": 9,
+    "draws": 11,
+    "losses": 5,
+    "score": 0.58,
+    "accepted": true,
+    "timestamp": 1777130903.235084
+  },
+  {
+    "iteration": 4,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and rook-on-semi-open-file bonus (+10 cp) to reward rooks placed on files with no friendly pawns (or no pawns at all).",
+    "wins": 0,
+    "draws": 25,
+    "losses": 0,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777130969.4701571
+  },
+  {
+    "iteration": 5,
+    "rationale": "Add a bishop pair bonus (+30 cp) and a rook-on-open/semi-open file bonus (+20/+10 cp), since the rook bonus was previously reverted but is a well-known strong heuristic worth retrying alongside the bishop pair.",
+    "wins": 0,
+    "draws": 25,
+    "losses": 0,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777131003.565255
+  },
+  {
+    "iteration": 6,
+    "rationale": "Add a bishop pair bonus (+30 cp) when a side has both bishops, which is a well-established positional bonus especially valuable in open positions.",
+    "wins": 18,
+    "draws": 3,
+    "losses": 4,
+    "score": 0.78,
+    "accepted": true,
+    "timestamp": 1777131352.678731
+  },
+  {
+    "iteration": 7,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and rook-on-semi-open-file bonus (+10 cp) to reward rooks placed on files with no friendly pawns (or no pawns at all).",
+    "wins": 0,
+    "draws": 25,
+    "losses": 0,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777131389.3353338
+  },
+  {
+    "iteration": 8,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and rook-on-semi-open-file bonus (+10 cp), implemented carefully to avoid the bugs that caused previous reversions, by checking pawn presence on the rook's file for each side independently.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777131424.292744
+  },
+  {
+    "iteration": 9,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and rook-on-semi-open-file bonus (+10 cp) by checking each rook's file for the presence of friendly and enemy pawns separately.",
+    "wins": 0,
+    "draws": 25,
+    "losses": 0,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777131472.5803509
+  },
+  {
+    "iteration": 10,
+    "rationale": "Add a king safety penalty based on pawn shelter \u2014 penalize the king when the pawns directly in front of it are missing, which is a high-value middlegame heuristic that complements existing PST king evaluation.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777131546.0477319
+  },
+  {
+    "iteration": 11,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by explicitly collecting pawn files for each color before scoring rooks, avoiding the subtle bugs that caused previous reversions.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777131613.749301
+  },
+  {
+    "iteration": 12,
+    "rationale": "Add a backward pawn penalty (~15 cp) to discourage leaving pawns that cannot be defended by other pawns and are vulnerable to attack, complementing the existing isolated and doubled pawn penalties.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777131808.815746
+  },
+  {
+    "iteration": 13,
+    "rationale": "Add a connected rooks bonus (+15 cp) when two friendly rooks are on the same rank or file with no pieces between them, rewarding a well-known positional concept not yet in the evaluator.",
+    "wins": 9,
+    "draws": 7,
+    "losses": 9,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777132890.822986
+  },
+  {
+    "iteration": 14,
+    "rationale": "Add an outpost bonus for knights placed on advanced squares (rank 4-6 for white, rank 3-5 for black) that cannot be attacked by any enemy pawn, rewarding well-known positional dominance not yet in the evaluator.",
+    "wins": 13,
+    "draws": 6,
+    "losses": 6,
+    "score": 0.64,
+    "accepted": true,
+    "timestamp": 1777133148.0587451
+  },
+  {
+    "iteration": 15,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) using precomputed sets of files occupied by white and black pawns, which is a well-known positional heuristic that has been previously attempted but with bugs.",
+    "wins": 3,
+    "draws": 12,
+    "losses": 10,
+    "score": 0.36,
+    "accepted": false,
+    "timestamp": 1777133569.301394
+  },
+  {
+    "iteration": 16,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by precomputing the set of files with white pawns and black pawns separately, then checking each rook's file against those sets.",
+    "wins": 3,
+    "draws": 10,
+    "losses": 12,
+    "score": 0.32,
+    "accepted": false,
+    "timestamp": 1777134011.756022
+  },
+  {
+    "iteration": 17,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by precomputing frozensets of occupied pawn files for each color, then scoring each rook based on whether its file is free of friendly pawns (semi-open) or all pawns (open).",
+    "wins": 6,
+    "draws": 14,
+    "losses": 5,
+    "score": 0.52,
+    "accepted": false,
+    "timestamp": 1777134416.249335
+  },
+  {
+    "iteration": 18,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by checking each rook's file against precomputed sets of files occupied by white and black pawns respectively.",
+    "wins": 2,
+    "draws": 20,
+    "losses": 3,
+    "score": 0.48,
+    "accepted": false,
+    "timestamp": 1777134750.7047732
+  },
+  {
+    "iteration": 19,
+    "rationale": "Add a king safety penalty based on pawn shelter \u2014 penalize the king for missing friendly pawns in the three files around it during the middlegame, a well-known and impactful heuristic not yet present.",
+    "wins": 0,
+    "draws": 25,
+    "losses": 0,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777134969.9012082
+  },
+  {
+    "iteration": 20,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by explicitly checking whether a rook's file contains any friendly pawns (for semi-open) and any pawns at all (for open).",
+    "wins": 4,
+    "draws": 9,
+    "losses": 12,
+    "score": 0.34,
+    "accepted": false,
+    "timestamp": 1777135542.049648
+  },
+  {
+    "iteration": 21,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) using explicit per-file pawn presence checks with clear boolean logic.",
+    "wins": 1,
+    "draws": 23,
+    "losses": 1,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777137841.479698
+  },
+  {
+    "iteration": 22,
+    "rationale": "Add a connected rooks bonus (+20 cp) when two friendly rooks share a rank or file with no pieces between them, rewarding rook coordination.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 25,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777137914.871161
+  },
+  {
+    "iteration": 23,
+    "rationale": "Add tapered evaluation by computing a phase weight from remaining material and interpolating between middlegame and endgame PST scores, replacing the binary endgame flag with a smooth blend.",
+    "wins": 9,
+    "draws": 10,
+    "losses": 6,
+    "score": 0.56,
+    "accepted": true,
+    "timestamp": 1777138242.736192
+  },
+  {
+    "iteration": 24,
+    "rationale": "Add a rook-on-open-file bonus (+20 cp) and semi-open-file bonus (+10 cp) by checking each rook's file for the presence of friendly and enemy pawns separately.",
+    "wins": 14,
+    "draws": 4,
+    "losses": 7,
+    "score": 0.64,
+    "accepted": true,
+    "timestamp": 1777138530.007411
+  },
+  {
+    "iteration": 25,
+    "rationale": "Add a backward pawn penalty to discourage weak pawns that cannot be defended by other pawns and are difficult to advance.",
+    "wins": 13,
+    "draws": 2,
+    "losses": 10,
+    "score": 0.56,
+    "accepted": true,
+    "timestamp": 1777138784.9485419
+  },
+  {
+    "iteration": 26,
+    "rationale": "Add a connected rooks bonus (+15 cp) when two friendly rooks share an open rank or file with no pieces between them, rewarding rook coordination.",
+    "wins": 10,
+    "draws": 8,
+    "losses": 7,
+    "score": 0.56,
+    "accepted": true,
+    "timestamp": 1777139065.645115
+  },
+  {
+    "iteration": 27,
+    "rationale": "Add a threat bonus that rewards attacking the opponent's undefended pieces, encouraging tactical alertness by scoring hanging piece captures.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 25,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777139159.230198
+  },
+  {
+    "iteration": 28,
+    "rationale": "Add a king safety bonus that rewards having more friendly pieces near the king in the middlegame, scaled by phase weight, to improve king protection evaluation.",
+    "wins": 0,
+    "draws": 0,
+    "losses": 25,
+    "score": 0.0,
+    "accepted": false,
+    "timestamp": 1777139251.414551
+  },
+  {
+    "iteration": 29,
+    "rationale": "Add a passed pawn bonus that accounts for how advanced the pawn is, rewarding passed pawns closer to promotion more heavily to improve endgame play.",
+    "wins": 7,
+    "draws": 11,
+    "losses": 7,
+    "score": 0.5,
+    "accepted": false,
+    "timestamp": 1777139774.222479
+  },
+  {
+    "iteration": 30,
+    "rationale": "Add a tempo/side-to-move bonus (+10 cp) to reward the active side for having the initiative, which helps break symmetrical evaluation ties and improves move ordering.",
+    "wins": 5,
+    "draws": 11,
+    "losses": 9,
+    "score": 0.42,
+    "accepted": false,
+    "timestamp": 1777140092.7669172
+  },
+  {
+    "iteration": 31,
+    "rationale": "Add a tapered piece-square table for rooks that rewards centralization in the endgame, since currently the MG and EG rook PSTs are identical and the endgame rook PST should encourage rook activity on open central files and ranks.",
+    "wins": 4,
+    "draws": 12,
+    "losses": 9,
+    "score": 0.4,
+    "accepted": false,
+    "timestamp": 1777140383.432034
+  },
+  {
+    "iteration": 32,
+    "rationale": "Add a bonus for rooks on the 7th rank (2nd rank for black), which is a classic positional advantage as it attacks pawns and restricts the enemy king.",
+    "wins": 7,
+    "draws": 14,
+    "losses": 4,
+    "score": 0.56,
+    "accepted": true,
+    "timestamp": 1777140707.888217
+  },
+  {
+    "iteration": 33,
+    "rationale": "Add a king attack bonus that counts the number of enemy pieces attacking squares near the opponent's king, scaled by phase, to improve king safety evaluation in the middlegame.",
+    "wins": 5,
+    "draws": 7,
+    "losses": 13,
+    "score": 0.34,
+    "accepted": false,
+    "timestamp": 1777141056.301059
+  },
+  {
+    "iteration": 34,
+    "rationale": "Add a threat bonus that rewards attacking undefended enemy pieces (hanging pieces), incentivizing the engine to exploit tactical opportunities where the opponent has loose pieces.",
+    "wins": 16,
+    "draws": 6,
+    "losses": 3,
+    "score": 0.76,
+    "accepted": true,
+    "timestamp": 1777141450.777673
+  },
+  {
+    "iteration": 35,
+    "rationale": "Add a tapered endgame rook PST that rewards central file placement and active rank positioning, since the current MG and EG rook PSTs are identical and endgame rooks benefit more from central activity than the middlegame PST reflects.",
+    "wins": 6,
+    "draws": 6,
+    "losses": 13,
+    "score": 0.36,
+    "accepted": false,
+    "timestamp": 1777141791.141233
+  },
+  {
+    "iteration": 36,
+    "rationale": "Add a space/center control bonus that rewards pawns and pieces controlling the four central squares (d4, e4, d5, e5), which encourages active piece play and central dominance.",
+    "wins": 10,
+    "draws": 8,
+    "losses": 7,
+    "score": 0.56,
+    "accepted": true,
+    "timestamp": 1777142104.032402
+  }
+]
