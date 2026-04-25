@@ -140,4 +140,3 @@ The best workflow depends on what you're optimizing for. After results, we'll sc
 - Could the builder do other work while it ran?
 - Did it produce clean, testable, documented code?
 
-If no single workflow wins on all five — the tradeoffs are the answer.
