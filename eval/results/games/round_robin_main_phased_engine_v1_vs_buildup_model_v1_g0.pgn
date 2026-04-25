@@ -1,0 +1,10 @@
+[Event "round_robin_main"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "Phased Engine"]
+[Black "BuildUp Model"]
+[Result "0-1"]
+
+1. Nf3 Nc6 2. e4 Nf6 3. e5 Nd5 4. d4 e6 5. Nbd2 Bb4 6. Bb5 Bxd2+ 0-1
+

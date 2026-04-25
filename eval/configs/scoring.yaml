@@ -1,0 +1,36 @@
+# scoring.yaml — weights for the aggregate leaderboards defined in PRD section 10.
+
+raw_strength:
+  round_robin_normalized: 0.45
+  double_elim_normalized: 0.20
+  stockfish_score_normalized: 0.20
+  tactical_accuracy_normalized: 0.15
+
+reliability:
+  completion_rate: 0.35
+  illegal_move_rate: 0.25      # weight applied to (1 - illegal_move_rate)
+  crash_rate: 0.20             # weight applied to (1 - crash_rate)
+  timeout_rate: 0.20           # weight applied to (1 - timeout_rate)
+
+engineering_efficiency:
+  strength_per_dollar: 0.30
+  strength_per_human_minute: 0.25
+  strength_per_prompt: 0.20
+  test_pass_rate: 0.15
+  maintainability_score: 0.10
+
+creativity:
+  novelty: 0.25
+  strategic_originality: 0.20
+  agent_workflow_originality: 0.25
+  risk_taking: 0.15
+  coherence: 0.15
+
+overall:
+  raw_strength: 0.40
+  reliability: 0.20
+  engineering_efficiency: 0.20
+  creativity: 0.10
+  documentation_reproducibility: 0.10
+
+stockfish_skill_levels: [0, 5, 10, 20]

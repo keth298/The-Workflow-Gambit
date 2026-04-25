@@ -1,0 +1,10 @@
+[Event "stockfish_eval"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "Phased Engine"]
+[Black "Stockfish (Skill 20)"]
+[Result "0-1"]
+
+1. Nf3 d5 2. Nc3 Nf6 3. e3 e6 4. Bb5+ c6 5. Bd3 Bd6 6. O-O e5 7. Be2 e4 0-1
+

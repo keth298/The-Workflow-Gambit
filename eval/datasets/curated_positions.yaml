@@ -1,0 +1,84 @@
+# curated_positions.yaml — positions for centipawn-loss (blunder) analysis.
+# Each entry provides a FEN; Stockfish evaluates the position before and after
+# the engine's move to compute centipawn loss.
+
+positions:
+  # ---- Opening / middlegame ----------------------------------------- #
+  - position_id: pos_001
+    fen: "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+    tags: [opening, italian_setup]
+    description: "White to move — standard Italian Game structure"
+
+  - position_id: pos_002
+    fen: "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/2N1PN2/PP3PPP/R1BQKB1R w KQ - 2 6"
+    tags: [opening, queens_gambit_declined]
+    description: "White to move — Nimzo-Indian type position"
+
+  - position_id: pos_003
+    fen: "r1bqkbnr/pp2pppp/2n5/3pP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq d6 0 5"
+    tags: [opening, caro_kann, en_passant]
+    description: "White has en passant opportunity"
+
+  - position_id: pos_004
+    fen: "r3k2r/pppq1ppp/2np1n2/2b1p1B1/2B1P1b1/2NP1N2/PPP1QPPP/R3K2R w KQkq - 4 9"
+    tags: [middlegame, complex]
+    description: "Symmetrical position with both sides castled or not"
+
+  - position_id: pos_005
+    fen: "r1bq1rk1/pp3pbp/2np1np1/2p1p3/2P5/2NPBNP1/PP2PPBP/R2QK2R w KQ - 0 10"
+    tags: [middlegame, kings_indian]
+    description: "King's Indian Defence typical middlegame"
+
+  # ---- Tactical positions ------------------------------------------- #
+  - position_id: pos_006
+    fen: "r1bqk2r/ppp2ppp/2nb1n2/3pp3/2B1P3/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 2 7"
+    tags: [middlegame, tactical]
+    description: "Both sides undeveloped — tactics possible"
+
+  - position_id: pos_007
+    fen: "2r2rk1/1p1bppbp/p2p1np1/q7/3BP3/1BN2N1P/PP2QPP1/2RR2K1 w - - 0 17"
+    tags: [middlegame, complex, tactical]
+    description: "Complex middlegame with multiple pieces"
+
+  - position_id: pos_008
+    fen: "3r2k1/pp3pp1/2p4p/4P3/3P2P1/P4P2/1P4KP/3R4 w - - 0 30"
+    tags: [endgame, rook_endgame]
+    description: "Rook and pawn endgame"
+
+  # ---- Endgame positions -------------------------------------------- #
+  - position_id: pos_009
+    fen: "8/5k2/4p3/3pP3/3P2K1/8/8/8 w - - 0 50"
+    tags: [endgame, pawn_endgame, opposition]
+    description: "Pawn endgame — opposition and passed pawn"
+
+  - position_id: pos_010
+    fen: "8/8/4k3/3pR3/4K3/8/8/8 w - - 0 60"
+    tags: [endgame, rook_endgame, winning]
+    description: "Lucena/Philidor-type rook endgame"
+
+  - position_id: pos_011
+    fen: "8/3k4/3p4/3P1K2/8/8/8/8 w - - 0 55"
+    tags: [endgame, pawn_endgame, key_square]
+    description: "King and pawn endgame — key square concept"
+
+  # ---- Defensive positions ------------------------------------------ #
+  - position_id: pos_012
+    fen: "r4rk1/ppp2ppp/2nqb3/3p2B1/3P4/2NBP3/PPP1QPPP/R4RK1 b - - 2 12"
+    tags: [middlegame, defensive, black_to_move]
+    description: "Black to move — find the defensive resource"
+
+  - position_id: pos_013
+    fen: "r1b2rk1/2q1bppp/p2ppn2/1p6/3NP3/1BN3Q1/PPP2PPP/4RRK1 b - - 0 16"
+    tags: [middlegame, defensive, counter_attack]
+    description: "Black must find active counterplay"
+
+  # ---- Tricky positions --------------------------------------------- #
+  - position_id: pos_014
+    fen: "rnbqkbnr/ppppp1pp/8/5p2/4P3/8/PPPP1PPP/RNBQKBNR w KQkq f6 0 2"
+    tags: [opening, gambit, en_passant]
+    description: "Dutch Defense — en passant is available"
+
+  - position_id: pos_015
+    fen: "r1bqkb1r/ppp2ppp/2np4/4N3/2BnP3/8/PPPP1PPP/RNBQK2R w KQkq - 0 6"
+    tags: [opening, italian, tactic]
+    description: "Knight on d4 — White must handle the tactics"

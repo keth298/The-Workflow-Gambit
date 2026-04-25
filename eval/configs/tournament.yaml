@@ -1,0 +1,14 @@
+tournament:
+  tournament_id: round_robin_main
+  type: round_robin
+  engines_config: configs/engines.yaml
+  games_per_pair: 5
+  random_seed: 42
+  time_control:
+    base_seconds: 30
+    increment_seconds: 0.5
+    max_move_seconds: 5
+  results_dir: results/
+  pgn_dir: results/games/
+  resume: true
+  opening_suite: null   # path to openings.pgn or null for standard start

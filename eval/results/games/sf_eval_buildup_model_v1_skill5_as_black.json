@@ -1,0 +1,28 @@
+{
+  "game_id": "sf_eval_buildup_model_v1_skill5_as_black",
+  "tournament_id": "stockfish_eval",
+  "white_engine_id": "stockfish_skill_5",
+  "black_engine_id": "buildup_model_v1",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "0-1",
+  "termination": "timeout",
+  "plies": 4,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 10625.486750010168,
+  "black_time_ms_total": 618.4942079999018,
+  "white_avg_move_ms": 3541.828916670056,
+  "black_avg_move_ms": 309.2471039999509,
+  "move_times_ms": [
+    4999.841042008484,
+    328.72016599867493,
+    624.8610829934478,
+    289.7740420012269,
+    5000.784625008237
+  ],
+  "pgn_path": "results/games/sf_eval_buildup_model_v1_skill5_as_black.pgn",
+  "metadata_path": "results/games/sf_eval_buildup_model_v1_skill5_as_black.json",
+  "error_log": [
+    "Timeout by stockfish_skill_5"
+  ]
+}

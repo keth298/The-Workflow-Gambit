@@ -1,0 +1,25 @@
+{
+  "game_id": "sf_eval_standard_prompt_v1_skill20_as_black",
+  "tournament_id": "stockfish_eval",
+  "white_engine_id": "stockfish_skill_20",
+  "black_engine_id": "standard_prompt_v1",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "1-0",
+  "termination": "timeout",
+  "plies": 1,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 1151.1762499867473,
+  "black_time_ms_total": 5002.40058300551,
+  "white_avg_move_ms": 1151.1762499867473,
+  "black_avg_move_ms": 5002.40058300551,
+  "move_times_ms": [
+    1151.1762499867473,
+    5002.40058300551
+  ],
+  "pgn_path": "results/games/sf_eval_standard_prompt_v1_skill20_as_black.pgn",
+  "metadata_path": "results/games/sf_eval_standard_prompt_v1_skill20_as_black.json",
+  "error_log": [
+    "Timeout by standard_prompt_v1"
+  ]
+}

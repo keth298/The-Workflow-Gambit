@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(printf \"uci\\\\nisready\\\\nposition startpos\\\\ngo\\\\nquit\\\\n\")",
+      "Bash(python main.py)",
+      "Bash(python -m pytest test_engine.py -v)",
+      "Bash(pip install:*)",
+      "Bash(claude --cost)",
+      "Bash(claude cost:*)",
+      "Bash(printf \"uci\\\\nisready\\\\nposition startpos moves e2e4 e7e5\\\\ngo movetime 2000\\\\nquit\\\\n\")",
+      "Bash(python -m pytest test_engine.py -q)",
+      "Bash(printf \"uci\\\\nisready\\\\nposition startpos moves e2e4 e7e5\\\\ngo movetime 3000\\\\nquit\\\\n\")",
+      "Bash(pyinstaller --onefile --name PhaseEngine main.py)",
+      "Bash(printf \"uci\\\\nisready\\\\nposition startpos\\\\ngo movetime 1000\\\\nquit\\\\n\")",
+      "Bash(\"C:/Users/sachh/OneDrive/Documents/GitHub/Point72Hackathon/engine/dist/PhaseEngine.exe\")",
+      "Bash(./dist/PhaseEngine.exe)",
+      "Bash(\"engine/dist/PhaseEngine.exe\")"
+    ]
+  }
+}

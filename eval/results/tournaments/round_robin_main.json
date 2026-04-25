@@ -1,0 +1,1501 @@
+{
+  "tournament_id": "round_robin_main",
+  "type": "round_robin",
+  "engines": [
+    "phased_engine_v1",
+    "single_shot_v1",
+    "buildup_model_v1",
+    "standard_prompt_v1",
+    "stockfish_replica_v1"
+  ],
+  "games_per_pair": 5,
+  "time_control": {
+    "base_seconds": 30,
+    "increment_seconds": 0.5
+  },
+  "random_seed": 42,
+  "status": "completed",
+  "games": [
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_single_shot_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 9,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 24970.673124014866,
+      "black_time_ms_total": 18996.16378999781,
+      "white_avg_move_ms": 4994.134624802973,
+      "black_avg_move_ms": 3799.2327579995617,
+      "move_times_ms": [
+        4991.102875006618,
+        4864.640541025437,
+        4993.882207985735,
+        2553.2239169988316,
+        4987.337250000564,
+        2974.960916006239,
+        5003.299500007415,
+        3601.658874977147,
+        4995.0512910145335,
+        5001.679540990153
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g0.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_phased_engine_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 5,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 10205.952875025105,
+      "black_time_ms_total": 14980.834167043213,
+      "white_avg_move_ms": 3401.984291675035,
+      "black_avg_move_ms": 4993.611389014404,
+      "move_times_ms": [
+        3181.492875010008,
+        4987.464583013207,
+        3173.852625011932,
+        4988.337334012613,
+        3850.6073750031646,
+        5005.032250017393
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_phased_engine_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_phased_engine_v1_g1.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_single_shot_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 4,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 14993.91599901719,
+      "black_time_ms_total": 7460.607249988243,
+      "white_avg_move_ms": 4997.971999672397,
+      "black_avg_move_ms": 3730.3036249941215,
+      "move_times_ms": [
+        4998.6231660004705,
+        4899.18012500857,
+        4993.781458004378,
+        2561.427124979673,
+        5001.511375012342
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g2.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_phased_engine_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 7,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 13034.023957996396,
+      "black_time_ms_total": 19988.81324994727,
+      "white_avg_move_ms": 3258.505989499099,
+      "black_avg_move_ms": 4997.203312486818,
+      "move_times_ms": [
+        3181.0999159934,
+        4990.526249981485,
+        3168.9085000252817,
+        4999.281249998603,
+        3858.9662500016857,
+        4995.1976249867585,
+        2825.049291976029,
+        5003.808124980424
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_phased_engine_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_phased_engine_v1_g3.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_single_shot_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 8,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 24991.53612504597,
+      "black_time_ms_total": 14081.517665967112,
+      "white_avg_move_ms": 4998.307225009194,
+      "black_avg_move_ms": 3520.379416491778,
+      "move_times_ms": [
+        4994.674000015948,
+        4896.846749994438,
+        4992.928292020224,
+        2564.2009580042213,
+        4999.971375014866,
+        2989.2357919889037,
+        5001.2073749967385,
+        3631.2341659795493,
+        5002.755082998192
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_single_shot_v1_g4.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_buildup_model_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 12,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 34945.991334010614,
+      "black_time_ms_total": 2885.6267079827376,
+      "white_avg_move_ms": 4992.284476287231,
+      "black_avg_move_ms": 480.9377846637896,
+      "move_times_ms": [
+        4994.903292012168,
+        285.453749995213,
+        4987.391542003024,
+        435.60554101713933,
+        4983.331082999939,
+        256.122291990323,
+        4989.532042003702,
+        524.39716598019,
+        4982.972833007807,
+        879.6192920126487,
+        5002.833958977135,
+        504.42866698722355,
+        5005.026583006838
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g0.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_phased_engine_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 196.93454101798125,
+      "black_time_ms_total": 5001.221167010954,
+      "white_avg_move_ms": 196.93454101798125,
+      "black_avg_move_ms": 5001.221167010954,
+      "move_times_ms": [
+        196.93454101798125,
+        5001.221167010954
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g1.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_buildup_model_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 9986.743167013628,
+      "black_time_ms_total": 286.64137501618825,
+      "white_avg_move_ms": 4993.371583506814,
+      "black_avg_move_ms": 286.64137501618825,
+      "move_times_ms": [
+        4984.3082500156015,
+        286.64137501618825,
+        5002.434916998027
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g2.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 7,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 728.574083012063,
+      "black_time_ms_total": 19977.13387600379,
+      "white_avg_move_ms": 182.14352075301576,
+      "black_avg_move_ms": 4994.283469000948,
+      "move_times_ms": [
+        196.435833000578,
+        4991.5750000218395,
+        192.08120799157768,
+        4991.196208982728,
+        142.98100001178682,
+        4991.879000008339,
+        197.07604200812057,
+        5002.483666990884
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_buildup_model_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 4,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 14981.673332978971,
+      "black_time_ms_total": 721.357041009469,
+      "white_avg_move_ms": 4993.89111099299,
+      "black_avg_move_ms": 360.6785205047345,
+      "move_times_ms": [
+        4989.051624987042,
+        285.409250005614,
+        4987.570458004484,
+        435.94779100385495,
+        5005.051249987446
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_buildup_model_v1_g4.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5002.608415990835,
+      "black_time_ms_total": 5005.065792007372,
+      "white_avg_move_ms": 5002.608415990835,
+      "black_avg_move_ms": 5005.065792007372,
+      "move_times_ms": [
+        5002.608415990835,
+        5005.065792007372
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g0.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5002.617916994495,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5002.617916994495,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5002.617916994495
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g1.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5000.859041989315,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5000.859041989315,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5000.859041989315
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g2.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5003.572208981495,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5003.572208981495,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5003.572208981495
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_phased_engine_v1_g3.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 4999.526749976212,
+      "black_time_ms_total": 5005.072208994534,
+      "white_avg_move_ms": 4999.526749976212,
+      "black_avg_move_ms": 5005.072208994534,
+      "move_times_ms": [
+        4999.526749976212,
+        5005.072208994534
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_standard_prompt_v1_g4.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5000.7466670067515,
+      "black_time_ms_total": 10.095415986143053,
+      "white_avg_move_ms": 5000.7466670067515,
+      "black_avg_move_ms": 10.095415986143053,
+      "move_times_ms": [
+        5000.7466670067515,
+        10.095415986143053
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g0.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "crash",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 11.050541972508654,
+      "black_time_ms_total": 4984.834167000372,
+      "white_avg_move_ms": 5.525270986254327,
+      "black_avg_move_ms": 4984.834167000372,
+      "move_times_ms": [
+        1.4169169880915433,
+        4984.834167000372,
+        9.63362498441711
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 4995.394541998394,
+      "black_time_ms_total": 10.13162499293685,
+      "white_avg_move_ms": 4995.394541998394,
+      "black_avg_move_ms": 10.13162499293685,
+      "move_times_ms": [
+        4995.394541998394,
+        10.13162499293685
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g2.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "phased_engine_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 1.3945420214440674,
+      "black_time_ms_total": 5004.2917920218315,
+      "white_avg_move_ms": 1.3945420214440674,
+      "black_avg_move_ms": 5004.2917920218315,
+      "move_times_ms": [
+        1.3945420214440674,
+        5004.2917920218315
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g3.json",
+      "error_log": [
+        "Timeout by phased_engine_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "phased_engine_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 4999.732917000074,
+      "black_time_ms_total": 10.122124978806823,
+      "white_avg_move_ms": 4999.732917000074,
+      "black_avg_move_ms": 10.122124978806823,
+      "move_times_ms": [
+        4999.732917000074,
+        10.122124978806823
+      ],
+      "pgn_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_phased_engine_v1_vs_stockfish_replica_v1_g4.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_buildup_model_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 8218.839626002591,
+      "black_time_ms_total": 350.32441598013975,
+      "white_avg_move_ms": 4109.419813001296,
+      "black_avg_move_ms": 350.32441598013975,
+      "move_times_ms": [
+        3217.2952920082025,
+        350.32441598013975,
+        5001.544333994389
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g0.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_single_shot_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 198.2977080042474,
+      "black_time_ms_total": 5005.054250010289,
+      "white_avg_move_ms": 198.2977080042474,
+      "black_avg_move_ms": 5005.054250010289,
+      "move_times_ms": [
+        198.2977080042474,
+        5005.054250010289
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_single_shot_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_single_shot_v1_g1.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_buildup_model_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 4,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 13200.300874043023,
+      "black_time_ms_total": 580.159209028352,
+      "white_avg_move_ms": 4400.100291347674,
+      "black_avg_move_ms": 290.079604514176,
+      "move_times_ms": [
+        3194.1066660219803,
+        352.17716702027246,
+        5001.086500007659,
+        227.9820420080796,
+        5005.107708013384
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g2.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_single_shot_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 197.07220798591152,
+      "black_time_ms_total": 5005.072333995486,
+      "white_avg_move_ms": 197.07220798591152,
+      "black_avg_move_ms": 5005.072333995486,
+      "move_times_ms": [
+        197.07220798591152,
+        5005.072333995486
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_single_shot_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_single_shot_v1_g3.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_buildup_model_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 8200.519000005443,
+      "black_time_ms_total": 350.0978339870926,
+      "white_avg_move_ms": 4100.259500002721,
+      "black_avg_move_ms": 350.0978339870926,
+      "move_times_ms": [
+        3195.5992080038413,
+        350.0978339870926,
+        5004.919792001601
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_buildup_model_v1_g4.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_standard_prompt_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3189.871916983975,
+      "black_time_ms_total": 5005.057709000539,
+      "white_avg_move_ms": 3189.871916983975,
+      "black_avg_move_ms": 5005.057709000539,
+      "move_times_ms": [
+        3189.871916983975,
+        5005.057709000539
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g0.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_single_shot_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5002.429707994452,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5002.429707994452,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5002.429707994452
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_single_shot_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_single_shot_v1_g1.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_standard_prompt_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3186.148292006692,
+      "black_time_ms_total": 5005.071207997389,
+      "white_avg_move_ms": 3186.148292006692,
+      "black_avg_move_ms": 5005.071207997389,
+      "move_times_ms": [
+        3186.148292006692,
+        5005.071207997389
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g2.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_single_shot_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5004.268458025763,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5004.268458025763,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5004.268458025763
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_single_shot_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_single_shot_v1_g3.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_standard_prompt_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3215.1596659969073,
+      "black_time_ms_total": 5001.758500002325,
+      "white_avg_move_ms": 3215.1596659969073,
+      "black_avg_move_ms": 5001.758500002325,
+      "move_times_ms": [
+        3215.1596659969073,
+        5001.758500002325
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_standard_prompt_v1_g4.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3197.310125018703,
+      "black_time_ms_total": 9.664165991125628,
+      "white_avg_move_ms": 3197.310125018703,
+      "black_avg_move_ms": 9.664165991125628,
+      "move_times_ms": [
+        3197.310125018703,
+        9.664165991125628
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g0.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 1.41666698618792,
+      "black_time_ms_total": 5001.404249982443,
+      "white_avg_move_ms": 1.41666698618792,
+      "black_avg_move_ms": 5001.404249982443,
+      "move_times_ms": [
+        1.41666698618792,
+        5001.404249982443
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g1.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3182.087124994723,
+      "black_time_ms_total": 10.056792001705617,
+      "white_avg_move_ms": 3182.087124994723,
+      "black_avg_move_ms": 10.056792001705617,
+      "move_times_ms": [
+        3182.087124994723,
+        10.056792001705617
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g2.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "single_shot_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 1.3079589989501983,
+      "black_time_ms_total": 5004.048375005368,
+      "white_avg_move_ms": 1.3079589989501983,
+      "black_avg_move_ms": 5004.048375005368,
+      "move_times_ms": [
+        1.3079589989501983,
+        5004.048375005368
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_single_shot_v1_g3.json",
+      "error_log": [
+        "Timeout by single_shot_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "single_shot_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 3184.9389169947244,
+      "black_time_ms_total": 9.001250000437722,
+      "white_avg_move_ms": 3184.9389169947244,
+      "black_avg_move_ms": 9.001250000437722,
+      "move_times_ms": [
+        3184.9389169947244,
+        9.001250000437722
+      ],
+      "pgn_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_single_shot_v1_vs_stockfish_replica_v1_g4.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 196.67041700449772,
+      "black_time_ms_total": 5002.166749996832,
+      "white_avg_move_ms": 196.67041700449772,
+      "black_avg_move_ms": 5002.166749996832,
+      "move_times_ms": [
+        196.67041700449772,
+        5002.166749996832
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g0.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5000.949667009991,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5000.949667009991,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5000.949667009991
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g1.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 198.88654199894518,
+      "black_time_ms_total": 5000.590375013417,
+      "white_avg_move_ms": 198.88654199894518,
+      "black_avg_move_ms": 5000.590375013417,
+      "move_times_ms": [
+        198.88654199894518,
+        5000.590375013417
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g2.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5005.079875001684,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5005.079875001684,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5005.079875001684
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_buildup_model_v1_g3.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 196.3745839893818,
+      "black_time_ms_total": 5005.076374975033,
+      "white_avg_move_ms": 196.3745839893818,
+      "black_avg_move_ms": 5005.076374975033,
+      "move_times_ms": [
+        196.3745839893818,
+        5005.076374975033
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_standard_prompt_v1_g4.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 198.2492500101216,
+      "black_time_ms_total": 9.376958012580872,
+      "white_avg_move_ms": 198.2492500101216,
+      "black_avg_move_ms": 9.376958012580872,
+      "move_times_ms": [
+        198.2492500101216,
+        9.376958012580872
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g0.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "crash",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 10.864623996894807,
+      "black_time_ms_total": 324.243333976483,
+      "white_avg_move_ms": 5.432311998447403,
+      "black_avg_move_ms": 324.243333976483,
+      "move_times_ms": [
+        1.3530829746741802,
+        324.243333976483,
+        9.511541022220626
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g1.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 197.4223750003148,
+      "black_time_ms_total": 9.717209002701566,
+      "white_avg_move_ms": 197.4223750003148,
+      "black_avg_move_ms": 9.717209002701566,
+      "move_times_ms": [
+        197.4223750003148,
+        9.717209002701566
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "buildup_model_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "crash",
+      "plies": 2,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 11.226957984035835,
+      "black_time_ms_total": 321.1551250133198,
+      "white_avg_move_ms": 5.613478992017917,
+      "black_avg_move_ms": 321.1551250133198,
+      "move_times_ms": [
+        1.3997919741086662,
+        321.1551250133198,
+        9.827166009927168
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_buildup_model_v1_g3.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "buildup_model_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "crash",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 197.79237499460578,
+      "black_time_ms_total": 9.366583020891994,
+      "white_avg_move_ms": 197.79237499460578,
+      "black_avg_move_ms": 9.366583020891994,
+      "move_times_ms": [
+        197.79237499460578,
+        9.366583020891994
+      ],
+      "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g4.json",
+      "error_log": [
+        "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g0",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5005.069124978036,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5005.069124978036,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5005.069124978036
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g0.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g0.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g1",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 1.5204160008579493,
+      "black_time_ms_total": 5000.400958000682,
+      "white_avg_move_ms": 1.5204160008579493,
+      "black_avg_move_ms": 5000.400958000682,
+      "move_times_ms": [
+        1.5204160008579493,
+        5000.400958000682
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g1.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g1.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g2",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5005.076957982965,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5005.076957982965,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5005.076957982965
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g2.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g2.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g3",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "stockfish_replica_v1",
+      "black_engine_id": "standard_prompt_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "1-0",
+      "termination": "timeout",
+      "plies": 1,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 1.4729579852428287,
+      "black_time_ms_total": 5002.724499994656,
+      "white_avg_move_ms": 1.4729579852428287,
+      "black_avg_move_ms": 5002.724499994656,
+      "move_times_ms": [
+        1.4729579852428287,
+        5002.724499994656
+      ],
+      "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g3.pgn",
+      "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_standard_prompt_v1_g3.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    },
+    {
+      "game_id": "round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g4",
+      "tournament_id": "round_robin_main",
+      "white_engine_id": "standard_prompt_v1",
+      "black_engine_id": "stockfish_replica_v1",
+      "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "result": "0-1",
+      "termination": "timeout",
+      "plies": 0,
+      "white_illegal_moves": 0,
+      "black_illegal_moves": 0,
+      "white_time_ms_total": 5005.073542008176,
+      "black_time_ms_total": 0,
+      "white_avg_move_ms": 5005.073542008176,
+      "black_avg_move_ms": 0,
+      "move_times_ms": [
+        5005.073542008176
+      ],
+      "pgn_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g4.pgn",
+      "metadata_path": "results/games/round_robin_main_standard_prompt_v1_vs_stockfish_replica_v1_g4.json",
+      "error_log": [
+        "Timeout by standard_prompt_v1"
+      ]
+    }
+  ],
+  "standings": [
+    {
+      "engine_id": "buildup_model_v1",
+      "engine_name": "BuildUp Model",
+      "games_played": 20,
+      "wins": 20,
+      "draws": 0,
+      "losses": 0,
+      "points": 20.0,
+      "illegal_moves": 0,
+      "crashes": 0,
+      "timeouts": 0,
+      "forfeit_wins": 0,
+      "forfeit_losses": 0
+    },
+    {
+      "engine_id": "single_shot_v1",
+      "engine_name": "Single Shot Engine",
+      "games_played": 20,
+      "wins": 12,
+      "draws": 0,
+      "losses": 8,
+      "points": 12.0,
+      "illegal_moves": 0,
+      "crashes": 0,
+      "timeouts": 8,
+      "forfeit_wins": 0,
+      "forfeit_losses": 0
+    },
+    {
+      "engine_id": "phased_engine_v1",
+      "engine_name": "Phased Engine",
+      "games_played": 20,
+      "wins": 9,
+      "draws": 0,
+      "losses": 11,
+      "points": 9.0,
+      "illegal_moves": 0,
+      "crashes": 0,
+      "timeouts": 11,
+      "forfeit_wins": 0,
+      "forfeit_losses": 0
+    },
+    {
+      "engine_id": "stockfish_replica_v1",
+      "engine_name": "HyperKnight (Stockfish Replica)",
+      "games_played": 20,
+      "wins": 8,
+      "draws": 0,
+      "losses": 12,
+      "points": 8.0,
+      "illegal_moves": 0,
+      "crashes": 12,
+      "timeouts": 0,
+      "forfeit_wins": 0,
+      "forfeit_losses": 0
+    },
+    {
+      "engine_id": "standard_prompt_v1",
+      "engine_name": "Standard Prompt Engine",
+      "games_played": 20,
+      "wins": 1,
+      "draws": 0,
+      "losses": 19,
+      "points": 1.0,
+      "illegal_moves": 0,
+      "crashes": 0,
+      "timeouts": 19,
+      "forfeit_wins": 0,
+      "forfeit_losses": 0
+    }
+  ],
+  "pairwise": {
+    "phased_engine_v1": {
+      "single_shot_v1": {
+        "wins": 1,
+        "draws": 0,
+        "losses": 4
+      },
+      "buildup_model_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      },
+      "standard_prompt_v1": {
+        "wins": 4,
+        "draws": 0,
+        "losses": 1
+      },
+      "stockfish_replica_v1": {
+        "wins": 4,
+        "draws": 0,
+        "losses": 1
+      }
+    },
+    "single_shot_v1": {
+      "phased_engine_v1": {
+        "wins": 4,
+        "draws": 0,
+        "losses": 1
+      },
+      "buildup_model_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      },
+      "standard_prompt_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "stockfish_replica_v1": {
+        "wins": 3,
+        "draws": 0,
+        "losses": 2
+      }
+    },
+    "buildup_model_v1": {
+      "phased_engine_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "single_shot_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "standard_prompt_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "stockfish_replica_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      }
+    },
+    "standard_prompt_v1": {
+      "phased_engine_v1": {
+        "wins": 1,
+        "draws": 0,
+        "losses": 4
+      },
+      "single_shot_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      },
+      "buildup_model_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      },
+      "stockfish_replica_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      }
+    },
+    "stockfish_replica_v1": {
+      "phased_engine_v1": {
+        "wins": 1,
+        "draws": 0,
+        "losses": 4
+      },
+      "single_shot_v1": {
+        "wins": 2,
+        "draws": 0,
+        "losses": 3
+      },
+      "buildup_model_v1": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 5
+      },
+      "standard_prompt_v1": {
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      }
+    }
+  }
+}

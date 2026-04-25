@@ -1,0 +1,26 @@
+{
+  "game_id": "round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1",
+  "tournament_id": "round_robin_main",
+  "white_engine_id": "stockfish_replica_v1",
+  "black_engine_id": "phased_engine_v1",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "0-1",
+  "termination": "crash",
+  "plies": 2,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 11.050541972508654,
+  "black_time_ms_total": 4984.834167000372,
+  "white_avg_move_ms": 5.525270986254327,
+  "black_avg_move_ms": 4984.834167000372,
+  "move_times_ms": [
+    1.4169169880915433,
+    4984.834167000372,
+    9.63362498441711
+  ],
+  "pgn_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1.pgn",
+  "metadata_path": "results/games/round_robin_main_stockfish_replica_v1_vs_phased_engine_v1_g1.json",
+  "error_log": [
+    "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+  ]
+}

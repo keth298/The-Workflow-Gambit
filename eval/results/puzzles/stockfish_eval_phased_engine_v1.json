@@ -1,0 +1,49 @@
+{
+  "engine_id": "phased_engine_v1",
+  "results_by_level": [
+    {
+      "engine_id": "phased_engine_v1",
+      "stockfish_skill_level": 0,
+      "games_played": 2,
+      "wins": 1,
+      "draws": 0,
+      "losses": 1,
+      "score_pct": 50.0,
+      "avg_survival_plies": 2.0,
+      "total_plies": 4
+    },
+    {
+      "engine_id": "phased_engine_v1",
+      "stockfish_skill_level": 5,
+      "games_played": 2,
+      "wins": 1,
+      "draws": 0,
+      "losses": 1,
+      "score_pct": 50.0,
+      "avg_survival_plies": 0.0,
+      "total_plies": 0
+    },
+    {
+      "engine_id": "phased_engine_v1",
+      "stockfish_skill_level": 10,
+      "games_played": 2,
+      "wins": 1,
+      "draws": 0,
+      "losses": 1,
+      "score_pct": 50.0,
+      "avg_survival_plies": 4.0,
+      "total_plies": 8
+    },
+    {
+      "engine_id": "phased_engine_v1",
+      "stockfish_skill_level": 20,
+      "games_played": 2,
+      "wins": 0,
+      "draws": 0,
+      "losses": 2,
+      "score_pct": 0.0,
+      "avg_survival_plies": 9.5,
+      "total_plies": 19
+    }
+  ]
+}

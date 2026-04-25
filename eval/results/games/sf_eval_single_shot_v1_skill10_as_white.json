@@ -1,0 +1,26 @@
+{
+  "game_id": "sf_eval_single_shot_v1_skill10_as_white",
+  "tournament_id": "stockfish_eval",
+  "white_engine_id": "single_shot_v1",
+  "black_engine_id": "stockfish_skill_10",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "0-1",
+  "termination": "timeout",
+  "plies": 2,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 8187.020417011809,
+  "black_time_ms_total": 4999.788584013004,
+  "white_avg_move_ms": 4093.5102085059043,
+  "black_avg_move_ms": 4999.788584013004,
+  "move_times_ms": [
+    3185.344208992319,
+    4999.788584013004,
+    5001.676208019489
+  ],
+  "pgn_path": "results/games/sf_eval_single_shot_v1_skill10_as_white.pgn",
+  "metadata_path": "results/games/sf_eval_single_shot_v1_skill10_as_white.json",
+  "error_log": [
+    "Timeout by single_shot_v1"
+  ]
+}

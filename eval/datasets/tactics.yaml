@@ -1,0 +1,156 @@
+# tactics.yaml — Fixed tactical puzzle set for engine evaluation.
+# 20 puzzles across all PRD categories.
+# FEN is the position BEFORE the best move. best_uci_moves lists acceptable answers.
+
+puzzles:
+
+  # ---- Mate in 1 ---------------------------------------------------- #
+  - puzzle_id: mate1_001
+    fen: "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1"
+    best_uci_moves: ["a1a8"]
+    tags: [mate, mate_in_1, beginner]
+    max_time_ms: 2000
+    description: "Back rank mate — rook to a8"
+
+  - puzzle_id: mate1_002
+    fen: "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 4 4"
+    best_uci_moves: ["f3f7"]
+    tags: [mate, mate_in_1, scholar]
+    max_time_ms: 2000
+    description: "Scholar's mate — Qxf7#"
+
+  - puzzle_id: mate1_003
+    fen: "5rk1/p4ppp/8/8/8/8/P4PPP/4R1K1 w - - 0 1"
+    best_uci_moves: ["e1e8"]
+    tags: [mate, mate_in_1, back_rank]
+    max_time_ms: 2000
+    description: "Back rank mate with rook"
+
+  # ---- Mate in 2 ---------------------------------------------------- #
+  - puzzle_id: mate2_001
+    fen: "r1b1kb1r/ppp2ppp/2n5/3qp3/3P4/2N2N2/PPP2PPP/R1BQK2R w KQkq - 0 7"
+    best_uci_moves: ["d1d5"]
+    tags: [mate, mate_in_2, intermediate]
+    max_time_ms: 3000
+    description: "Queen takes central d5 pawn — leads to mate in 2"
+
+  - puzzle_id: mate2_002
+    fen: "6k1/5p2/6p1/8/8/8/5PPP/4R1K1 w - - 0 1"
+    best_uci_moves: ["e1e8"]
+    tags: [mate, mate_in_2, endgame]
+    max_time_ms: 3000
+    description: "Rook lifts to 8th rank forcing mate"
+
+  # ---- Hanging piece ------------------------------------------------- #
+  - puzzle_id: hang_001
+    fen: "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+    best_uci_moves: ["f3e5"]
+    tags: [tactic, hanging_piece, beginner]
+    max_time_ms: 2000
+    description: "Knight captures undefended e5 pawn"
+
+  - puzzle_id: hang_002
+    fen: "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+    best_uci_moves: ["f3e5"]
+    tags: [tactic, hanging_piece, beginner]
+    max_time_ms: 2000
+    description: "Knight captures e5 pawn — hanging after Nc6 without defending"
+
+  # ---- Fork ---------------------------------------------------------- #
+  - puzzle_id: fork_001
+    fen: "r1bqkb1r/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 4"
+    best_uci_moves: ["g1f3", "d1h5"]
+    tags: [tactic, fork, intermediate]
+    max_time_ms: 3000
+    description: "Fork opportunity in the opening"
+
+  - puzzle_id: fork_002
+    fen: "8/8/8/3k4/8/3N4/8/3K4 w - - 0 1"
+    best_uci_moves: ["d3b4", "d3f4", "d3c5", "d3e5", "d3b2", "d3f2", "d3c1", "d3e1"]
+    tags: [tactic, fork, endgame, knight]
+    max_time_ms: 3000
+    description: "Knight fork position — best move wins material"
+
+  # ---- Pin ----------------------------------------------------------- #
+  - puzzle_id: pin_001
+    fen: "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+    best_uci_moves: ["f1b5"]
+    tags: [tactic, pin, opening]
+    max_time_ms: 3000
+    description: "Bishop pin on the knight against the king — Ruy Lopez"
+
+  - puzzle_id: pin_002
+    fen: "r1b1kb1r/ppppqppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5"
+    best_uci_moves: ["c4f7"]
+    tags: [tactic, pin, fork, intermediate]
+    max_time_ms: 3000
+    description: "Bishop forks king and rook via f7"
+
+  # ---- Skewer -------------------------------------------------------- #
+  - puzzle_id: skewer_001
+    fen: "8/8/8/8/3k4/8/8/R2K4 w - - 0 1"
+    best_uci_moves: ["a1d1"]
+    tags: [tactic, skewer, endgame]
+    max_time_ms: 3000
+    description: "Rook skewer on the d-file — king forced to move, loses material"
+
+  - puzzle_id: skewer_002
+    fen: "8/3k4/8/8/8/8/8/3RK3 w - - 0 1"
+    best_uci_moves: ["d1d7"]
+    tags: [tactic, skewer, endgame]
+    max_time_ms: 3000
+    description: "Rook skewer forcing king to run"
+
+  # ---- Back rank ----------------------------------------------------- #
+  - puzzle_id: backrank_001
+    fen: "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1"
+    best_uci_moves: ["a1a8"]
+    tags: [tactic, back_rank, intermediate]
+    max_time_ms: 2000
+    description: "Back rank checkmate threat"
+
+  # ---- Endgame conversion -------------------------------------------- #
+  - puzzle_id: endgame_001
+    fen: "8/P7/8/8/8/8/8/k1K5 w - - 0 1"
+    best_uci_moves: ["a7a8q", "a7a8r"]
+    tags: [endgame, promotion, beginner]
+    max_time_ms: 2000
+    description: "Pawn promotion to queen or rook to win"
+
+  - puzzle_id: endgame_002
+    fen: "8/8/8/8/8/1k6/1p6/1K6 b - - 0 1"
+    best_uci_moves: ["b2b1q", "b2b1r"]
+    tags: [endgame, promotion, beginner]
+    max_time_ms: 2000
+    description: "Black pawn promotes to win"
+
+  # ---- Defensive only move ------------------------------------------- #
+  - puzzle_id: defense_001
+    fen: "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3"
+    best_uci_moves: ["g2g3"]
+    tags: [defense, defensive_move, beginner]
+    max_time_ms: 2000
+    description: "Forced defensive move to avoid immediate queen checkmate"
+
+  # ---- Opening trap avoidance ---------------------------------------- #
+  - puzzle_id: trap_001
+    fen: "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2"
+    best_uci_moves: ["d8h4"]
+    tags: [opening, trap, beginner]
+    max_time_ms: 2000
+    description: "Scholar's mate threat — Qh4+ if white plays Ke2"
+
+  - puzzle_id: trap_002
+    fen: "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 4"
+    best_uci_moves: ["f6e4", "d7d5", "f6d5"]
+    tags: [opening, trap, intermediate]
+    max_time_ms: 3000
+    description: "Counter-attack opportunities for Black in the Italian Game"
+
+  # ---- Tactical combination ------------------------------------------ #
+  - puzzle_id: combo_001
+    fen: "r2q1rk1/ppp2ppp/2n1bn2/3pp3/2B1P3/2NP1N2/PPP2PPP/R1BQR1K1 w - - 0 9"
+    best_uci_moves: ["c4f7", "e4d5"]
+    tags: [tactic, combination, intermediate]
+    max_time_ms: 4000
+    description: "Tactical idea with bishop on f7 or central pawn push"

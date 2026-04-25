@@ -1,0 +1,25 @@
+{
+  "game_id": "round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2",
+  "tournament_id": "round_robin_main",
+  "white_engine_id": "buildup_model_v1",
+  "black_engine_id": "stockfish_replica_v1",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "1-0",
+  "termination": "crash",
+  "plies": 1,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 197.4223750003148,
+  "black_time_ms_total": 9.717209002701566,
+  "white_avg_move_ms": 197.4223750003148,
+  "black_avg_move_ms": 9.717209002701566,
+  "move_times_ms": [
+    197.4223750003148,
+    9.717209002701566
+  ],
+  "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2.pgn",
+  "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_stockfish_replica_v1_g2.json",
+  "error_log": [
+    "Crash by stockfish_replica_v1: Engine stdout closed unexpectedly"
+  ]
+}

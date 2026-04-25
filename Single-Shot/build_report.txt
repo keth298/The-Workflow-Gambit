@@ -1,0 +1,124 @@
+═══════════════════════════════════════════════════════════════
+SingleShot UCI Chess Engine — Build Report
+═══════════════════════════════════════════════════════════════
+
+BUILD METADATA
+──────────────
+Date:              2026-04-24
+Wall-clock time:   ~891 seconds (~15 minutes)
+Estimated tokens:  ~45,000 (input + output combined)
+Language:          Python 3 (single file, no dependencies)
+
+FILES CREATED
+─────────────
+engine.py          600 lines total, 531 non-comment lines
+build_report.txt   (this file)
+
+LINES OF CODE
+─────────────
+600 total lines in engine.py:
+  - Constants / Zobrist table:   ~40 lines
+  - PST tables:                  ~80 lines
+  - Board class (push/pop/FEN):  ~120 lines
+  - Attack detection:            ~50 lines
+  - Move generation:             ~100 lines
+  - Evaluation:                  ~25 lines
+  - Search (AB + quiescence):    ~100 lines
+  - UCI loop:                    ~85 lines
+
+ENGINE FEATURES
+───────────────
+Board:
+  - 64-square mailbox representation
+  - Incremental Zobrist hashing (XOR-based)
+  - Push/pop move history (no full-copy; O(1) make/unmake)
+  - FEN loader (all standard fields)
+
+Move Generation:
+  - Pseudo-legal + legality filter (is-king-in-check test)
+  - Pawns: single/double push, diagonal capture, en passant, promotion (Q/R/B/N)
+  - Knights, bishops, rooks, queens: standard delta/ray generation
+  - Kings: 8 adjacent squares + castling (KQkq)
+  - Castling: path-attack check (passes through/from attacked square blocked)
+
+Search:
+  - Iterative deepening negamax
+  - Alpha-beta pruning (fail-hard)
+  - Principal variation tracked via transposition table
+  - Transposition table (dict, unbounded, depth-preferred replacement)
+  - Quiescence search (captures + promotions only)
+  - Null-move pruning (R=3, disabled in check and pawnless positions)
+  - Late-move reduction (LMR, depth>=3, move>=4, -1 ply reduction)
+  - Move ordering: TT move > captures (MVV-LVA) > promotions > killers > history heuristic
+  - Two killer slots per ply
+  - History heuristic (depth² bonus on quiet cutoff moves)
+
+Evaluation:
+  - Material values: P=100, N=320, B=330, R=500, Q=900
+  - Piece-square tables (PSTs) for all 6 piece types
+  - PSTs are mirrored for black (vertical flip)
+  - Score returned relative to side to move (negamax convention)
+
+Time Management:
+  - Fraction-of-clock: target = remaining_time/30 + increment/2
+  - Early-exit if >50% of target used between depths
+  - Hard stop if >90% of target used
+  - movetime= supported directly
+  - go infinite supported (1e9 second limit, stop via 'stop' command)
+  - Threaded search (go runs in daemon thread, main loop stays responsive)
+
+UCI Compliance:
+  - uci → id name/author + uciok
+  - isready → readyok
+  - ucinewgame → reload startpos, clear TT
+  - position startpos [moves ...]
+  - position fen <fen> [moves ...]
+  - go [wtime/btime/winc/binc/movetime/depth/infinite]
+  - stop → sets stop flag, joins thread
+  - quit → graceful exit
+  - All output on stdout, flushed immediately
+  - All logs (none by default) would go to stderr
+
+CORRECTNESS VERIFICATION
+─────────────────────────
+Perft results (startpos, all match reference):
+  perft(1) = 20          ✓
+  perft(2) = 400         ✓
+  perft(3) = 8902        ✓
+  perft(4) = 197281      ✓
+
+Perft results (kiwipete: r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq):
+  perft(1) = 48          ✓
+  perft(2) = 2039        ✓
+  perft(3) = 97862       ✓
+
+Perft results (position 3: 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - -):
+  perft(1) = 14          ✓
+  perft(2) = 191         ✓
+  perft(3) = 2812        ✓
+
+Tactical tests:
+  - Scholar's Mate (checkmate) → bestmove 0000             ✓
+  - Mate-in-1 (Qxf7#) → found at depth 2                  ✓
+  - Back-rank mate → Ra1a8# found at depth 2               ✓
+  - Pawn promotion → e7e8q found at depth 1                ✓
+  - Self-play 12 half-moves → no illegal moves, no crash   ✓
+
+BUGS ENCOUNTERED AND FIXED
+───────────────────────────
+1. "global _stop as gs" — invalid Python syntax.
+   Fix: separate `global _stop` and assignment.
+
+2. global declaration after use in same function.
+   Fix: moved search thread functions to module level (_do_search, _search_thread_ref)
+   instead of nesting them inside uci_loop.
+
+3. Search thread killed on stdin EOF.
+   Fix: added `_search_thread_ref[0].join()` after the main for-loop to wait for
+   any running search before the process exits.
+
+4. Checkmate position returned bestmove a1a1 (encoding of move 0).
+   Fix: search() returns None when no legal moves exist;
+   _do_search outputs "bestmove 0000" in that case.
+
+═══════════════════════════════════════════════════════════════

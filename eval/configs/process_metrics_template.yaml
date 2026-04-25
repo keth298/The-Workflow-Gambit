@@ -1,0 +1,34 @@
+# process_metrics_template.yaml
+# Fill in this file for each engine and save it as:
+#   results/process_metrics_<engine_id>.yaml
+#
+# Fields marked "manual" are self-reported.
+# Fields marked "auto" are computed by the framework.
+# Fields marked "unknown" if not available — do NOT leave as 0.
+
+engine_id: REPLACE_ME                  # must match engine_id in engine.yaml
+
+# ---- Cost --------------------------------------------------------- #
+input_tokens: 0                        # manual — from API usage dashboard
+output_tokens: 0                       # manual
+estimated_cost_usd: 0.0               # manual — sum of API costs in USD
+
+# ---- Human involvement -------------------------------------------- #
+human_time_minutes: 0                  # manual — active human time (use a timer)
+prompt_count: 0                        # manual — number of prompts sent to AI
+human_correction_count: 0             # manual — times you had to fix/redirect the AI
+
+# ---- Prompting quality -------------------------------------------- #
+prior_knowledge_required_score: 0     # manual — 1=none, 5=deep chess+SWE knowledge
+frustration_score: 0                  # manual — 1=smooth, 5=very painful
+multitaskability_score: 0            # manual — 1=requires full attention, 5=fully async
+parallelization_score: 0             # manual — 1=sequential only, 5=massively parallel
+
+# ---- Engineering (auto-calculated on report generation) ----------- #
+loc: 0                                 # auto — source lines of code
+test_count: 0                          # auto — number of test functions
+test_pass_rate: 0.0                   # auto — % of tests passing (0–100)
+doc_word_count: 0                      # auto — README + docstring word count
+
+# ---- Notes -------------------------------------------------------- #
+notes: ""

@@ -1,0 +1,38 @@
+{
+  "game_id": "sf_eval_phased_engine_v1_skill20_as_white",
+  "tournament_id": "stockfish_eval",
+  "white_engine_id": "phased_engine_v1",
+  "black_engine_id": "stockfish_skill_20",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "0-1",
+  "termination": "timeout",
+  "plies": 14,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 39904.0590430086,
+  "black_time_ms_total": 8028.399500966771,
+  "white_avg_move_ms": 4988.007380376075,
+  "black_avg_move_ms": 1146.9142144238244,
+  "move_times_ms": [
+    4984.351166989654,
+    2458.112666005036,
+    4989.152499998454,
+    1349.6312919887714,
+    4984.927041019546,
+    1059.6023329999298,
+    4980.52695899969,
+    1720.365208981093,
+    4982.476917008171,
+    392.0325840008445,
+    4996.202417009044,
+    499.27991698496044,
+    4981.385708000744,
+    549.3755000061356,
+    5005.036333983298
+  ],
+  "pgn_path": "results/games/sf_eval_phased_engine_v1_skill20_as_white.pgn",
+  "metadata_path": "results/games/sf_eval_phased_engine_v1_skill20_as_white.json",
+  "error_log": [
+    "Timeout by phased_engine_v1"
+  ]
+}

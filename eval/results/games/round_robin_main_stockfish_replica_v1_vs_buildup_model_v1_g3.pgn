@@ -1,0 +1,10 @@
+[Event "round_robin_main"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "HyperKnight (Stockfish Replica)"]
+[Black "BuildUp Model"]
+[Result "0-1"]
+
+1. Nc3 Nc6 0-1
+

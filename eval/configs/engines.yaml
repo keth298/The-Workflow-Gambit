@@ -1,0 +1,89 @@
+engines:
+  - engine_id: phased_engine_v1
+    engine_name: Phased Engine
+    strategy_name: Phase Implementation / Milestone Agents
+    owner: Hyun-Dai
+    uci_command: "python3 ../PhasedEngine/engine.py"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: true
+    notes: "Built in phases: move gen, evaluation, search, time management."
+
+  - engine_id: single_shot_v1
+    engine_name: Single Shot Engine
+    strategy_name: Single Shot
+    owner: ""
+    uci_command: "python3 ../Single-Shot/engine.py"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: true
+    notes: "One prompt, one response, no iteration."
+
+  - engine_id: buildup_model_v1
+    engine_name: BuildUp Model
+    strategy_name: Build-Up (TicTacToe → Chess)
+    owner: ""
+    uci_command: "python3 -m chess.uci"
+    working_directory: "../BuildUpModel-TicTacToe"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: true
+    notes: "Engine built incrementally from TicTacToe up to Chess."
+
+  - engine_id: standard_prompt_v1
+    engine_name: Standard Prompt Engine
+    strategy_name: Standard Single Prompt
+    owner: ""
+    uci_command: "python3 main.py"
+    working_directory: "../Standard-Prompt/engine"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: true
+    notes: "Engine generated from a standard chess engine prompt."
+
+  - engine_id: random_features_v1
+    engine_name: Random Features Engine
+    strategy_name: Random Feature Selection
+    owner: ""
+    uci_command: "python3 engine.py"
+    working_directory: "../Random-Features"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: true
+    notes: "Base variant selected by tournament: highest total score, best win rate."
+
+  - engine_id: bigdata_engine_v1
+    engine_name: BigData RAG Engine
+    strategy_name: RAG / Large Dataset
+    owner: ""
+    uci_command: "python3 engine.py"
+    working_directory: "../BigDataEngine/rag_engine"
+    language: Python
+    frameworks: [python-chess]
+    created_from_existing_foundation: false
+    stockfish_derived: false
+    enabled: false
+    notes: "Chess engine using retrieval-augmented generation over large datasets. Disabled pending torch/faiss install."
+
+  - engine_id: stockfish_replica_v1
+    engine_name: HyperKnight (Stockfish Replica)
+    strategy_name: Copy Stockfish to a Tee
+    owner: Hyun-Dai
+    uci_command: "../StockfishReplica/ChessEngine/hyperknight"
+    language: C++
+    frameworks: []
+    created_from_existing_foundation: false
+    stockfish_derived: true
+    enabled: true
+    max_search_depth: 5
+    notes: "C++ engine modelled closely on Stockfish architecture. Segfaults at depth 6+; capped at depth 5."

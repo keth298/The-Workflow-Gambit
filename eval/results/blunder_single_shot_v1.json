@@ -1,0 +1,233 @@
+{
+  "engine_id": "single_shot_v1",
+  "total_positions": 15,
+  "avg_cp_loss": 0.0,
+  "median_cp_loss": 0.0,
+  "blunder_count": 0,
+  "blunder_rate_pct": 0.0,
+  "catastrophic_count": 0,
+  "inaccuracy_count": 0,
+  "mistake_count": 0,
+  "best_move_agreement_pct": 0.0,
+  "results": [
+    {
+      "position_id": "pos_001",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "opening",
+        "italian_setup"
+      ],
+      "engine_move": null,
+      "score_before_cp": 49,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_002",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "opening",
+        "queens_gambit_declined"
+      ],
+      "engine_move": null,
+      "score_before_cp": 40,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_003",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "opening",
+        "caro_kann",
+        "en_passant"
+      ],
+      "engine_move": null,
+      "score_before_cp": 30,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_004",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "complex"
+      ],
+      "engine_move": null,
+      "score_before_cp": 33,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_005",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "kings_indian"
+      ],
+      "engine_move": null,
+      "score_before_cp": 40,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_006",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "tactical"
+      ],
+      "engine_move": null,
+      "score_before_cp": 31,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_007",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "complex",
+        "tactical"
+      ],
+      "engine_move": null,
+      "score_before_cp": 30,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_008",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "endgame",
+        "rook_endgame"
+      ],
+      "engine_move": null,
+      "score_before_cp": 34,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_009",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "endgame",
+        "pawn_endgame",
+        "opposition"
+      ],
+      "engine_move": null,
+      "score_before_cp": 38,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_010",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "endgame",
+        "rook_endgame",
+        "winning"
+      ],
+      "engine_move": null,
+      "score_before_cp": 34,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_011",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "endgame",
+        "pawn_endgame",
+        "key_square"
+      ],
+      "engine_move": null,
+      "score_before_cp": 36,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_012",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "defensive",
+        "black_to_move"
+      ],
+      "engine_move": null,
+      "score_before_cp": 43,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_013",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "middlegame",
+        "defensive",
+        "counter_attack"
+      ],
+      "engine_move": null,
+      "score_before_cp": 39,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_014",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "opening",
+        "gambit",
+        "en_passant"
+      ],
+      "engine_move": null,
+      "score_before_cp": 32,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    },
+    {
+      "position_id": "pos_015",
+      "engine_id": "single_shot_v1",
+      "tags": [
+        "opening",
+        "italian",
+        "tactic"
+      ],
+      "engine_move": null,
+      "score_before_cp": 40,
+      "score_after_cp": null,
+      "cp_loss": null,
+      "classification": "no_move",
+      "best_move_agreement": false
+    }
+  ]
+}

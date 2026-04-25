@@ -1,0 +1,10 @@
+[Event "stockfish_eval"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "Stockfish (Skill 20)"]
+[Black "BuildUp Model"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 Ne4 3. d4 Nc6 4. f3 Nxd4 5. Qxd4 Nd6 6. exd6 exd6 7. Nc3 Qe7+ 8. Be3 c5 9. Qd2 Rb8 10. O-O-O Qe5 11. Bf4 Qe6 12. Re1 d5 13. Nxd5 Bd6 14. Bxd6 c4 15. Rxe6+ dxe6 16. Qg5 f6 17. Qxg7 exd5 18. Qe7# 1-0
+

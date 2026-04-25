@@ -1,0 +1,10 @@
+[Event "stockfish_eval"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "Stockfish (Skill 0)"]
+[Black "BuildUp Model"]
+[Result "1-0"]
+
+1. d4 Nc6 2. Nf3 Nf6 3. d5 Nb4 4. e4 Nxe4 5. c3 Na6 6. Qe2 Nac5 7. b4 e5 8. bxc5 Qf6 9. Qxe4 Bxc5 10. Qc2 O-O 11. Be2 c6 12. Na3 cxd5 13. O-O Bxa3 14. Qd1 Bxc1 15. Qxc1 d6 16. Qd2 Bg4 17. Qxd5 Rab8 18. Rae1 Rfe8 19. c4 e4 20. Ng5 Bxe2 21. Rxe2 Re5 22. Nxe4 Qg6 23. Qd3 Rxe4 24. Rxe4 Rd8 25. Rfe1 a6 26. Re8+ Rxe8 27. Rxe8# 1-0
+

@@ -1,0 +1,46 @@
+# creativity_template.yaml
+# Fill in this file for each engine and save it as:
+#   results/creativity_<engine_id>.yaml
+#
+# Scores are 1–5 per dimension.  Provide short justifications.
+# See PRD §7.10 for the full rubric.
+
+engine_id: REPLACE_ME
+
+# ---- Creativity dimensions ---------------------------------------- #
+
+novelty: 0
+# 1 = standard minimax clone
+# 3 = minor variation on standard approach
+# 5 = meaningfully different design
+novelty_justification: ""
+
+strategic_originality: 0
+# 1 = basic material evaluation only
+# 3 = some positional or unusual evaluation ideas
+# 5 = highly unusual search/eval concepts
+strategic_originality_justification: ""
+
+agent_workflow_originality: 0
+# 1 = simple single-prompt chain
+# 3 = multi-step or iterative workflow
+# 5 = novel agent coordination strategy
+agent_workflow_originality_justification: ""
+
+risk_taking: 0
+# 1 = conservative, safe choices throughout
+# 3 = some ambitious design decisions
+# 5 = highly ambitious approach with high variance
+risk_taking_justification: ""
+
+coherence: 0
+# 1 = creative ideas not integrated; broken engine
+# 3 = creative ideas partially working
+# 5 = creative ideas fully integrated and functional
+coherence_justification: ""
+
+# ---- Evaluation method used --------------------------------------- #
+# "human" | "llm" | "hybrid"
+evaluation_method: human
+
+evaluator_notes: ""

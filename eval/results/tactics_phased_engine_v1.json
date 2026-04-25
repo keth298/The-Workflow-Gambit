@@ -1,0 +1,486 @@
+{
+  "engine_id": "phased_engine_v1",
+  "total_puzzles": 20,
+  "correct": 1,
+  "accuracy_pct": 5.0,
+  "avg_time_ms": 2541.183420701418,
+  "by_category": {
+    "mate": {
+      "total": 5,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "mate_in_1": {
+      "total": 3,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "beginner": {
+      "total": 7,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "scholar": {
+      "total": 1,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "back_rank": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "mate_in_2": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "intermediate": {
+      "total": 6,
+      "correct": 1,
+      "accuracy_pct": 16.666666666666664
+    },
+    "endgame": {
+      "total": 6,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "tactic": {
+      "total": 10,
+      "correct": 1,
+      "accuracy_pct": 10.0
+    },
+    "hanging_piece": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "fork": {
+      "total": 3,
+      "correct": 1,
+      "accuracy_pct": 33.33333333333333
+    },
+    "knight": {
+      "total": 1,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "pin": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "opening": {
+      "total": 3,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "skewer": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "promotion": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "defense": {
+      "total": 1,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "defensive_move": {
+      "total": 1,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "trap": {
+      "total": 2,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    },
+    "combination": {
+      "total": 1,
+      "correct": 0,
+      "accuracy_pct": 0.0
+    }
+  },
+  "puzzle_results": [
+    {
+      "puzzle_id": "mate1_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "mate",
+        "mate_in_1",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "a1a8"
+      ],
+      "elapsed_ms": 1980.805416998919,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "mate1_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "mate",
+        "mate_in_1",
+        "scholar"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "f3f7"
+      ],
+      "elapsed_ms": 1983.834625018062,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "mate1_003",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "mate",
+        "mate_in_1",
+        "back_rank"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "e1e8"
+      ],
+      "elapsed_ms": 2002.5032080011442,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "mate2_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "mate",
+        "mate_in_2",
+        "intermediate"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "d1d5"
+      ],
+      "elapsed_ms": 2993.3744999871124,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "mate2_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "mate",
+        "mate_in_2",
+        "endgame"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "e1e8"
+      ],
+      "elapsed_ms": 2997.6665829890408,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "hang_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "hanging_piece",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "f3e5"
+      ],
+      "elapsed_ms": 1985.5132079974283,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "hang_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "hanging_piece",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "f3e5"
+      ],
+      "elapsed_ms": 1989.3500409962144,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "fork_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "fork",
+        "intermediate"
+      ],
+      "correct": true,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "g1f3",
+        "d1h5"
+      ],
+      "elapsed_ms": 2983.7927920161746,
+      "timeout": false,
+      "illegal": false,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "fork_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "fork",
+        "endgame",
+        "knight"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "d3b4",
+        "d3f4",
+        "d3c5",
+        "d3e5",
+        "d3b2",
+        "d3f2",
+        "d3c1",
+        "d3e1"
+      ],
+      "elapsed_ms": 2988.2400000060443,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "pin_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "pin",
+        "opening"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "f1b5"
+      ],
+      "elapsed_ms": 2988.2542499981355,
+      "timeout": false,
+      "illegal": false,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "pin_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "pin",
+        "fork",
+        "intermediate"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "c4f7"
+      ],
+      "elapsed_ms": 2998.569707997376,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "skewer_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "skewer",
+        "endgame"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "a1d1"
+      ],
+      "elapsed_ms": 2995.0405829877127,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "skewer_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "skewer",
+        "endgame"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "d1d7"
+      ],
+      "elapsed_ms": 3002.063250023639,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "backrank_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "back_rank",
+        "intermediate"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "a1a8"
+      ],
+      "elapsed_ms": 1990.1559580175672,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "endgame_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "endgame",
+        "promotion",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "a7a8q",
+        "a7a8r"
+      ],
+      "elapsed_ms": 2000.1077499764506,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "endgame_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "endgame",
+        "promotion",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "b2b1q",
+        "b2b1r"
+      ],
+      "elapsed_ms": 1991.4822080172598,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "defense_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "defense",
+        "defensive_move",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "g2g3"
+      ],
+      "elapsed_ms": 1991.521832998842,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "trap_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "opening",
+        "trap",
+        "beginner"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "d8h4"
+      ],
+      "elapsed_ms": 1980.982708017109,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "trap_002",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "opening",
+        "trap",
+        "intermediate"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "f6e4",
+        "d7d5",
+        "f6d5"
+      ],
+      "elapsed_ms": 2994.7055419906974,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    },
+    {
+      "puzzle_id": "combo_001",
+      "engine_id": "phased_engine_v1",
+      "tags": [
+        "tactic",
+        "combination",
+        "intermediate"
+      ],
+      "correct": false,
+      "engine_move": "g1f3",
+      "expected_moves": [
+        "c4f7",
+        "e4d5"
+      ],
+      "elapsed_ms": 3985.7042499934323,
+      "timeout": false,
+      "illegal": true,
+      "no_move": false
+    }
+  ]
+}

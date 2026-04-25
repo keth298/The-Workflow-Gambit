@@ -1,0 +1,31 @@
+{
+  "game_id": "round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3",
+  "tournament_id": "round_robin_main",
+  "white_engine_id": "buildup_model_v1",
+  "black_engine_id": "phased_engine_v1",
+  "start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "result": "1-0",
+  "termination": "timeout",
+  "plies": 7,
+  "white_illegal_moves": 0,
+  "black_illegal_moves": 0,
+  "white_time_ms_total": 728.574083012063,
+  "black_time_ms_total": 19977.13387600379,
+  "white_avg_move_ms": 182.14352075301576,
+  "black_avg_move_ms": 4994.283469000948,
+  "move_times_ms": [
+    196.435833000578,
+    4991.5750000218395,
+    192.08120799157768,
+    4991.196208982728,
+    142.98100001178682,
+    4991.879000008339,
+    197.07604200812057,
+    5002.483666990884
+  ],
+  "pgn_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3.pgn",
+  "metadata_path": "results/games/round_robin_main_buildup_model_v1_vs_phased_engine_v1_g3.json",
+  "error_log": [
+    "Timeout by phased_engine_v1"
+  ]
+}

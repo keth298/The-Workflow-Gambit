@@ -1,0 +1,10 @@
+[Event "stockfish_eval"]
+[Site "?"]
+[Date "2026.04.25"]
+[Round "?"]
+[White "BuildUp Model"]
+[Black "Stockfish (Skill 10)"]
+[Result "1-0"]
+
+1. Nc3 d5 2. Nf3 1-0
+

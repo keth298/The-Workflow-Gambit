@@ -1,0 +1,42 @@
+=== Tournament Results Report ===
+Generated : 2026-04-25 17:58 UTC
+Games/match: 2  |  Time/move: 300 ms
+Tournament runtime: 1432.1s
+
+─── Leaderboard ─────────────────────────────────────────────────────────────
+Engine            Score  Wins  Losses  Draws
+─────────────────────────────────────────────────
+base               13.0    11       1      4
+aggro_push         12.5    10       1      5
+king_walk          11.5     9       2      5
+first_rank_lock     8.5     6       5      5
+random_blunder      7.0     6       8      2
+bishops_only        6.5     6       9      1
+no_pawn_push        6.5     3       6      7
+mirror_queen        3.5     3      12      1
+fortress            3.0     2      12      2
+
+─── Variants vs Base Engine ─────────────────────────────────────────────────
+Variant           Score  Games  WinRate  Feature
+─────────────────────────────────────────────────────────────────
+aggro_push          1.0      2    50.0%  always plays most-advanced pawn push when no captures exist
+king_walk           1.0      2    50.0%  never castles; steers king toward the centre
+first_rank_lock     0.5      2    25.0%  locks back-rank pieces for the first 10 moves
+no_pawn_push        0.5      2    25.0%  stops pushing pawns entirely after move 20
+bishops_only        0.0      2     0.0%  never moves knights (bishops-and-majors style)
+fortress            0.0      2     0.0%  restricts all pieces to own half of the board after move 15
+mirror_queen        0.0      2     0.0%  responds to any opponent queen move with its own queen move
+random_blunder      0.0      2     0.0%  plays a random legal move on every 5th full-move number
+
+─── Selected Engine ─────────────────────────────────────────────────────────
+Engine  : base
+Score   : 13.0  (W=11 L=1 D=4, loss rate=6.2%)
+Vs base : N/A
+Feature : standard alpha-beta with no behavioral restriction
+Reason  : highest total score
+Output  : engine.py (standalone, fully UCI-compliant)
+
+─── Build Costs (cumulative) ────────────────────────────────────────────────
+Total runtime  : 1432.1s  (23.9 min)
+Token estimate : ~1,498  (≈ output chars / 4)
+

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(g++ -std=c++17 -O2 -Isrc -o /tmp/perft /tmp/perft.cpp src/bitboard.cpp src/zobrist.cpp src/position.cpp src/movegen.cpp src/evaluate.cpp -lpthread)",
+      "Bash(/tmp/perft)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(make clean *)",
+      "Bash(make all *)",
+      "Bash(./hyperknight)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(make CXXFLAGS=\"-std=c++17 -O3 -march=native -DNDEBUG -flto\")"
+    ]
+  }
+}
