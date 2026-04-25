@@ -23,7 +23,7 @@ So we ran an experiment.
 
 ## The Experiment
 
-- 10 engines, 10 workflows, same time budget
+- 9 engines, 9 workflows, same time budget
 - Shared base `CLAUDE.md` for standardization
 - Single move interface — every engine plugs into the same evaluation system. 
 - Results logged automatically, no manual entry
