@@ -1,130 +1,158 @@
-# Which AI Development Workflow Actually Wins?
-**Cubist Hackathon 2026**
+# Methodology — Which AI Development Workflow Actually Wins?
+**Cubist Hackathon 2026 — Prinell**
 
 ---
 
 ## The Question
 
-Everyone uses AI to code. Nobody agrees on how.
+AI coding tools are everywhere. Nobody agrees on how to use them.
 
-We built **12 chess engines** — same problem, same time budget, different workflow each time — then made them fight. The goal wasn't to build a great chess engine. It was to find out which approach to AI-assisted development actually produces the best result, and by what definition of "best."
+Not which model is best — that conversation is everywhere. We mean the workflow:
+how you structure your interaction with the model, how much context you provide,
+how much autonomy you give it, how you verify its output.
 
-No single workflow swept. The tradeoffs between strength, cost, and effort are the finding.
+Everyone has opinions. Nobody has data.
 
----
-
-## Why 12?
-
-We disagreed on the right approach and couldn't resolve it by talking about it.
-
-Should you front-load the model with full context, or let it discover the problem? Does cloning a strong existing engine beat building from scratch? Is a hands-off agentic loop better than careful human steering?
-
-We picked a side on each disagreement, built it, and let the results arbitrate.
+So we ran an experiment.
 
 ---
 
-## The Engines
+## The Finding
 
-Each engine ships with the `CLAUDE.md` used to build it.
+> [TO FILL: one sentence stating the core tradeoff or winner once results are in]
 
-| Engine | Owner | Going-in Hypothesis | Approach |
+---
+
+## Experiment Design
+
+One problem, one time budget, one shared interface. The only variable was
+the workflow used to build each engine.
+
+Standardization was enforced three ways: a shared base CLAUDE.md that every
+builder started from, a fixed move interface every engine had to expose, and
+a tournament harness that neither knew nor cared how each engine was built.
+
+---
+
+## The Workflows
+
+Five philosophies, ten engines. Each engine ships with the full `CLAUDE.md` 
+used to build it — every prompt, every constraint, every correction.
+
+| Philosophy | Engine | Owner | Going-in Hypothesis |
 |---|---|---|---|
-| GAN / Adversarial | — | — | Generate outlandish candidates, adversarially select the best |
-| Single Shot | — | — | Standard prompting, no scaffolding |
-| Single Shot + Context | — | — | Standard prompting with supplied background knowledge |
-| Phase Implementation | — | — | One milestone agent per build stage |
-| AutoResearch (Ralphing) | — | — | Hands-off loop, minimal human input |
-| Tool-Augmented LLM | — | — | AI with search, databases, and external tools |
-| Stockfish Clone (verbatim) | — | — | Reproduce Stockfish directly from source material |
-| Stockfish Clone (understood) | — | — | Reproduce Stockfish from human-interpreted understanding |
-| Tic-Tac-Toe Baseline | — | — | Intentionally underbuilt, anchors the lower bound |
-| Org Structure | — | — | CTO + subagent hires mirroring an engineering org |
-| AlphaGo-style | — | — | MCTS + self-play |
-| Large Dataset | — | — | Primed with opening books, endgame tables, curated positions |
+| Minimal intervention | Single Shot | — | — |
+| Minimal intervention | Single Shot + Context | — | — |
+| Structured process | Phase Implementation | — | — |
+| Structured process | Tool-Augmented | — | — |
+| Autonomous / Agentic | AutoResearch | — | — |
+| Autonomous / Agentic | Org Structure | — | — |
+| Knowledge-first | Stockfish Clone (verbatim) | — | — |
+| Knowledge-first | Stockfish Clone (understood) | — | — |
+| Knowledge-first | Large Dataset | — | — |
+| Adversarial | GAN / Adversarial | — | — |
 
 ---
 
 ## The Tournament Harness
 
-The harness was the one shared artifact every engine had to plug into equally. All engines expose the same move interface. Time controls are fixed and enforced externally. Illegal moves are auto-adjudicated as a loss. Results log automatically — no manual entry.
+The harness was the team's shared integration artifact and the mechanism
+that makes the comparison fair. It knows nothing about how any engine was
+built — it only calls the move interface.
 
-**Built by:** —
+**Design constraints:**
+- All engines expose an identical move interface
+- Time controls are fixed and enforced externally so engines with different
+  move-time profiles compete equally
+- Illegal moves are auto-adjudicated as a loss, no manual review
+- Match results log automatically to a shared results file
 
-**Format:**
+**Built by:** [NAME] — while the other four team members built engines
+in parallel. This was the clearest example of intelligent work division
+in the project.
+
+**Tournament format:**
 - Round robin — every engine plays every other, both colors
 - Double elimination — bracket seeded from round-robin standings
-- Stockfish baseline — all engines play fixed-depth Stockfish to generate a common Elo proxy
+- Stockfish baseline — all engines play fixed-depth Stockfish for a common Elo proxy
 
 ---
 
-## Evaluation
+## Metrics
 
-### Tournament
-| Metric | Format |
-|---|---|
-| Round robin | Every engine plays every other |
-| Double elimination | Bracket to test consistency under pressure |
-| Elo rating | Derived from match outcomes |
-| Stockfish baseline | Fixed-depth comparison against a known reference |
-
-### Engine Quality
-| Metric | Measurement |
-|---|---|
-| Tactical puzzle accuracy | % correct on a shared curated position set |
-| Illegal move rate | Should be 0 — any nonzero is disqualifying |
-| Blunder rate | Errors on curated critical positions |
-| Avg move time | Seconds per move |
+### Output Quality
+| Metric | Type | Notes |
+|---|---|---|
+| Elo rating | Objective | Derived from round robin outcomes |
+| Round robin record | Objective | W/L/D |
+| vs. Stockfish baseline | Objective | Fixed depth, common reference |
+| Tactical puzzle accuracy | Objective | % correct on shared curated set |
+| Illegal move rate | Objective | Should be 0 — nonzero disqualifies |
 
 ### Workflow Cost
-| Metric | Measurement |
-|---|---|
-| Token cost | Claude Code usage logs (USD) |
-| Human time | Hours logged during build |
-| Prior knowledge required | Low / Med / High |
-| Parallelizability | Could the builder do other work while it ran? |
+| Metric | Type | Notes |
+|---|---|---|
+| Token cost | Objective | Claude Code usage logs (USD) |
+| Human time | Objective | Hours logged per build |
+| Prompt count | Objective | Total prompts issued |
+| Correction rate | Objective | Times builder had to redirect the model |
+| Prior knowledge required | Categorical | Low / Med / High |
+| Parallelizable | Binary | Could builder do other work while it ran? |
 
-### Code Quality
-| Metric | Measurement |
-|---|---|
-| Lines of code | Raw size |
-| Test coverage | % |
-| Creativity | Novelty relative to standard engine design |
+### Process Quality
+| Metric | Type | Notes |
+|---|---|---|
+| Creativity of approach | Ranked categorical | How novel relative to standard dev practice |
+| Avg move time | Objective | Seconds per move |
+| Test coverage | Objective | % |
 
 ---
 
 ## Results
 
-### Tournament
-| Engine | Round Robin | Double Elim | Elo | vs. Stockfish |
+*To be filled after tournament completes.*
+
+### Output Quality
+| Engine | Elo | vs. Stockfish | Puzzle Accuracy | Illegal Moves |
 |---|---|---|---|---|
-| GAN / Adversarial | — | — | — | — |
 | Single Shot | — | — | — | — |
 | Single Shot + Context | — | — | — | — |
 | Phase Implementation | — | — | — | — |
 | AutoResearch | — | — | — | — |
 | Tool-Augmented | — | — | — | — |
+| GAN / Adversarial | — | — | — | — |
+| Org Structure | — | — | — | — |
 | Stockfish Clone (verbatim) | — | — | — | — |
 | Stockfish Clone (understood) | — | — | — | — |
-| Tic-Tac-Toe Baseline | — | — | — | — |
-| Org Structure | — | — | — | — |
-| AlphaGo-style | — | — | — | — |
 | Large Dataset | — | — | — | — |
 
 ### Workflow Cost
-| Engine | Token Cost | Human Time | Prior Knowledge | Can Do Other Work? |
-|---|---|---|---|---|
-| GAN / Adversarial | — | — | — | — |
-| Single Shot | — | — | — | — |
-| Single Shot + Context | — | — | — | — |
-| Phase Implementation | — | — | — | — |
-| AutoResearch | — | — | — | — |
-| Tool-Augmented | — | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — | — |
-| Stockfish Clone (understood) | — | — | — | — |
-| Tic-Tac-Toe Baseline | — | — | — | — |
-| Org Structure | — | — | — | — |
-| AlphaGo-style | — | — | — | — |
-| Large Dataset | — | — | — | — |
+| Engine | Token Cost | Human Time | Prompt Count | Correction Rate | Prior Knowledge | Parallelizable |
+|---|---|---|---|---|---|---|
+| Single Shot | — | — | — | — | — | — |
+| Single Shot + Context | — | — | — | — | — | — |
+| Phase Implementation | — | — | — | — | — | — |
+| AutoResearch | — | — | — | — | — | — |
+| Tool-Augmented | — | — | — | — | — | — |
+| GAN / Adversarial | — | — | — | — | — | — |
+| Org Structure | — | — | — | — | — | — |
+| Stockfish Clone (verbatim) | — | — | — | — | — | — |
+| Stockfish Clone (understood) | — | — | — | — | — | — |
+| Large Dataset | — | — | — | — | — | — |
+
+### Process Quality
+| Engine | Creativity | Avg Move Time | Test Coverage |
+|---|---|---|---|
+| Single Shot | — | — | — |
+| Single Shot + Context | — | — | — |
+| Phase Implementation | — | — | — |
+| AutoResearch | — | — | — |
+| Tool-Augmented | — | — | — |
+| GAN / Adversarial | — | — | — |
+| Org Structure | — | — | — |
+| Stockfish Clone (verbatim) | — | — | — |
+| Stockfish Clone (understood) | — | — | — |
+| Large Dataset | — | — | — |
 
 ---
 
@@ -132,11 +160,49 @@ The harness was the one shared artifact every engine had to plug into equally. A
 
 *To be filled after results.*
 
-The best workflow depends on what you're optimizing for. After results, we'll score each engine on:
+### Scoring rubric
 
-- Did it win the tournament?
-- Was it the cheapest to run?
-- Did it require the least human time and prior knowledge?
-- Could the builder do other work while it ran?
-- Did it produce clean, testable, documented code?
+A workflow scores a point for each of the following:
+- Highest Elo or top 3 round robin finish
+- Lowest token cost
+- Lowest human time
+- Lowest correction rate
+- Highest test coverage
 
+The workflow with the most points is the overall winner. The tradeoff matrix
+shows which workflow wins on each dimension independently.
+
+### Rankings
+| Rank | Engine | Strongest At |
+|---|---|---|
+| 1 | — | — |
+| 2 | — | — |
+| 3 | — | — |
+
+### Tradeoff Matrix
+| If you're optimizing for... | Use this workflow |
+|---|---|
+| Strongest output, have domain knowledge | — |
+| Minimum human time | — |
+| Minimum token cost | — |
+| Running it while doing other work | — |
+| Clean, testable code | — |
+
+---
+
+## What We Learned
+
+*To be filled — but the hypothesis going in is that no single workflow sweeps,
+and the tradeoffs between autonomy, cost, and output quality are the real finding.*
+
+---
+
+## The Team
+
+| Member | Engine(s) Owned | Going-in Hypothesis |
+|---|---|---|
+| [NAME] | Harness + [engine] | — |
+| [NAME] | — | — |
+| [NAME] | — | — |
+| [NAME] | — | — |
+| [NAME] | — | — |
