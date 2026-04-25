@@ -18,3 +18,4 @@ UCI on stdin/stdout, one line each, flush after every response. Logs to stderr o
 
 ## Developemnt Process
 Aim to create the strongest engine possible during planning, development, and implementation, but once the engine is woking, don't try to improve the model much further.
+Do not make a README file. That will be done later. 
