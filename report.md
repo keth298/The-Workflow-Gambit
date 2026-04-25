@@ -36,21 +36,45 @@ a tournament harness that neither knew nor cared how each engine was built.
 
 ## The Workflows
 
-Five philosophies, ten engines. Each engine ships with the full `CLAUDE.md` 
+Four philosophies, ten engines. Each engine ships with the full `CLAUDE.md`
 used to build it — every prompt, every constraint, every correction.
 
-| Philosophy | Engine | Owner | Going-in Hypothesis |
-|---|---|---|---|
-| Minimal intervention | Single Shot | — | — |
-| Minimal intervention | Single Shot + Context | — | — |
-| Structured process | Phase Implementation | — | — |
-| Structured process | Tool-Augmented | — | — |
-| Autonomous / Agentic | AutoResearch | — | — |
-| Autonomous / Agentic | Org Structure | — | — |
-| Knowledge-first | Stockfish Clone (verbatim) | — | — |
-| Knowledge-first | Stockfish Clone (understood) | — | — |
-| Knowledge-first | Large Dataset | — | — |
-| Adversarial | GAN / Adversarial | — | — |
+### Basic Prompting
+Direct, human-steered prompting. The spectrum from least to most structured.
+
+| Engine | Owner | Going-in Hypothesis |
+|---|---|---|
+| One Shot | — | Minimal prompting produces a functional engine with no scaffolding |
+| Standard Prompting | — | Standard iterative prompting with context outperforms one shot |
+| Phase Implementation | — | Breaking the build into milestones improves output quality |
+
+### Agentic
+Workflows where the model operates with significant autonomy or through
+multi-agent architectures.
+
+| Engine | Owner | Going-in Hypothesis |
+|---|---|---|
+| Adversarial | — | Adversarial selection of generated candidates improves quality |
+| AutoResearch | — | A hands-off self-improving loop can match human-steered output |
+| Tool-Augmented | — | Giving the model external tools improves output quality |
+
+### Data-driven
+Workflows that front-load the model with existing knowledge rather than
+building from first principles.
+
+| Engine | Owner | Going-in Hypothesis |
+|---|---|---|
+| Stockfish Clone | — | Feeding the model existing source material produces a strong engine |
+| Large Dataset | — | Priming with opening books and endgame tables improves play quality |
+
+### Unconventional
+Workflows that approach the problem indirectly — either by simplifying it
+or by sidestepping traditional engine design entirely.
+
+| Engine | Owner | Going-in Hypothesis |
+|---|---|---|
+| Tic-Tac-Toe Baseline | — | Intentionally underbuilt — anchors the lower bound |
+| Randomized Features | — | Randomized design sidesteps standard engine assumptions |
 
 ---
 
@@ -113,46 +137,46 @@ in the project.
 *To be filled after tournament completes.*
 
 ### Output Quality
-| Engine | Elo | vs. Stockfish | Puzzle Accuracy | Illegal Moves |
-|---|---|---|---|---|
-| Single Shot | — | — | — | — |
-| Single Shot + Context | — | — | — | — |
-| Phase Implementation | — | — | — | — |
-| AutoResearch | — | — | — | — |
-| Tool-Augmented | — | — | — | — |
-| GAN / Adversarial | — | — | — | — |
-| Org Structure | — | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — | — |
-| Stockfish Clone (understood) | — | — | — | — |
-| Large Dataset | — | — | — | — |
+| Engine | Cluster | Elo | vs. Stockfish | Puzzle Accuracy | Illegal Moves |
+|---|---|---|---|---|---|
+| One Shot | Basic | — | — | — | — |
+| Standard Prompting | Basic | — | — | — | — |
+| Phase Implementation | Basic | — | — | — | — |
+| Adversarial | Agentic | — | — | — | — |
+| AutoResearch | Agentic | — | — | — | — |
+| Tool-Augmented | Agentic | — | — | — | — |
+| Stockfish Clone | Data-driven | — | — | — | — |
+| Large Dataset | Data-driven | — | — | — | — |
+| Tic-Tac-Toe Baseline | Unconventional | — | — | — | — |
+| Randomized Features | Unconventional | — | — | — | — |
 
 ### Workflow Cost
 | Engine | Token Cost | Human Time | Prompt Count | Correction Rate | Prior Knowledge | Parallelizable |
 |---|---|---|---|---|---|---|
-| Single Shot | — | — | — | — | — | — |
-| Single Shot + Context | — | — | — | — | — | — |
+| One Shot | — | — | — | — | — | — |
+| Standard Prompting | — | — | — | — | — | — |
 | Phase Implementation | — | — | — | — | — | — |
+| Adversarial | — | — | — | — | — | — |
 | AutoResearch | — | — | — | — | — | — |
 | Tool-Augmented | — | — | — | — | — | — |
-| GAN / Adversarial | — | — | — | — | — | — |
-| Org Structure | — | — | — | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — | — | — | — |
-| Stockfish Clone (understood) | — | — | — | — | — | — |
+| Stockfish Clone | — | — | — | — | — | — |
 | Large Dataset | — | — | — | — | — | — |
+| Tic-Tac-Toe Baseline | — | — | — | — | — | — |
+| Randomized Features | — | — | — | — | — | — |
 
 ### Process Quality
 | Engine | Creativity | Avg Move Time | Test Coverage |
 |---|---|---|---|
-| Single Shot | — | — | — |
-| Single Shot + Context | — | — | — |
+| One Shot | — | — | — |
+| Standard Prompting | — | — | — |
 | Phase Implementation | — | — | — |
+| Adversarial | — | — | — |
 | AutoResearch | — | — | — |
 | Tool-Augmented | — | — | — |
-| GAN / Adversarial | — | — | — |
-| Org Structure | — | — | — |
-| Stockfish Clone (verbatim) | — | — | — |
-| Stockfish Clone (understood) | — | — | — |
+| Stockfish Clone | — | — | — |
 | Large Dataset | — | — | — |
+| Tic-Tac-Toe Baseline | — | — | — |
+| Randomized Features | — | — | — |
 
 ---
 
