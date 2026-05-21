@@ -2,7 +2,7 @@
 
 **Cubist Hackathon 2026** — A controlled experiment in AI-assisted software development.
 
-> *9 engineers. 9 workflows. One chess engine specification. Which approach wins?*
+> *5 engineers. 9 workflows. One chess engine specification. Which approach wins?*
 
 ---
 
